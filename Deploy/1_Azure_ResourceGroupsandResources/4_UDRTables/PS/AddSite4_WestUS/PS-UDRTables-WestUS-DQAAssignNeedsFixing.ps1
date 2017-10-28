@@ -1,4 +1,5 @@
-﻿$$App = "AAA"
+﻿$App = "AAA"
+$Appcode = "aaa"
 $Stage1 = "DevQA"
 $Stage2 = "Prod"
 $Stage1code = "dqa"
