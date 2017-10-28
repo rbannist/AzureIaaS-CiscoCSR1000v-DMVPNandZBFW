@@ -1,0 +1,30 @@
+az network vnet create --name  rb-we-aaa-dqa-vn01 --resource-group  rb-we-aaa-dqa-csrcr-rg01 --location westeurope --address-prefix 192.168.0.0/20 --tags App=AAA Stage=DevQA
+az network vnet subnet create --address-prefix 192.168.0.0/24 --name rb-we-aaa-dqa-vn01-sn01 --resource-group rb-we-aaa-dqa-csrcr-rg01 --vnet-name rb-we-aaa-dqa-vn01
+az network vnet subnet create --address-prefix 192.168.1.0/24 --name rb-we-aaa-dqa-vn01-sn02 --resource-group rb-we-aaa-dqa-csrcr-rg01 --vnet-name rb-we-aaa-dqa-vn01
+az network vnet subnet create --address-prefix 192.168.2.0/24 --name rb-we-aaa-dqa-vn01-sn03 --resource-group rb-we-aaa-dqa-csrcr-rg01 --vnet-name rb-we-aaa-dqa-vn01
+az network vnet subnet create --address-prefix 192.168.3.0/24 --name rb-we-aaa-dqa-vn01-sn04 --resource-group rb-we-aaa-dqa-csrcr-rg01 --vnet-name rb-we-aaa-dqa-vn01
+az network vnet create --name  rb-sea-aaa-dqa-vn01 --resource-group  rb-sea-aaa-dqa-csrcr-rg01 --location northeurope --address-prefix 192.168.16.0/20 --tags App=AAA Stage=DevQA
+az network vnet subnet create --address-prefix 192.168.16.0/24 --name rb-sea-aaa-dqa-vn01-sn01 --resource-group rb-sea-aaa-dqa-csrcr-rg01 --vnet-name rb-sea-aaa-dqa-vn01
+az network vnet subnet create --address-prefix 192.168.17.0/24 --name rb-sea-aaa-dqa-vn01-sn02 --resource-group rb-sea-aaa-dqa-csrcr-rg01 --vnet-name rb-sea-aaa-dqa-vn01
+az network vnet subnet create --address-prefix 192.168.18.0/24 --name rb-sea-aaa-dqa-vn01-sn03 --resource-group rb-sea-aaa-dqa-csrcr-rg01 --vnet-name rb-sea-aaa-dqa-vn01
+az network vnet subnet create --address-prefix 192.168.19.0/24 --name rb-sea-aaa-dqa-vn01-sn04 --resource-group rb-sea-aaa-dqa-csrcr-rg01 --vnet-name rb-sea-aaa-dqa-vn01
+az network vnet create --name  rb-eus-aaa-dqa-vn01 --resource-group  rb-eus-aaa-dqa-csrcr-rg01 --location eastus --address-prefix 192.168.32.0/20 --tags App=AAA Stage=DevQA
+az network vnet subnet create --address-prefix 192.168.32.0/24 --name rb-eus-aaa-dqa-vn01-sn01 --resource-group rb-eus-aaa-dqa-csrcr-rg01 --vnet-name rb-eus-aaa-dqa-vn01
+az network vnet subnet create --address-prefix 192.168.33.0/24 --name rb-eus-aaa-dqa-vn01-sn02 --resource-group rb-eus-aaa-dqa-csrcr-rg01 --vnet-name rb-eus-aaa-dqa-vn01
+az network vnet subnet create --address-prefix 192.168.34.0/24 --name rb-eus-aaa-dqa-vn01-sn03 --resource-group rb-eus-aaa-dqa-csrcr-rg01 --vnet-name rb-eus-aaa-dqa-vn01
+az network vnet subnet create --address-prefix 192.168.35.0/24 --name rb-eus-aaa-dqa-vn01-sn04 --resource-group rb-eus-aaa-dqa-csrcr-rg01 --vnet-name rb-eus-aaa-dqa-vn01
+az network vnet create --name  rb-we-aaa-prod-vn01 --resource-group  rb-we-aaa-prod-csrcr-rg01 --location westeurope --address-prefix 192.168.112.0/20 --tags App=AAA Stage=Prod
+az network vnet subnet create --address-prefix 192.168.112.0/24 --name rb-we-aaa-prod-vn01-sn01 --resource-group rb-we-aaa-prod-csrcr-rg01 --vnet-name rb-we-aaa-prod-vn01
+az network vnet subnet create --address-prefix 192.168.113.0/24 --name rb-we-aaa-prod-vn01-sn02 --resource-group rb-we-aaa-prod-csrcr-rg01 --vnet-name rb-we-aaa-prod-vn01
+az network vnet subnet create --address-prefix 192.168.114.0/24 --name rb-we-aaa-prod-vn01-sn03 --resource-group rb-we-aaa-prod-csrcr-rg01 --vnet-name rb-we-aaa-prod-vn01
+az network vnet subnet create --address-prefix 192.168.115.0/24 --name rb-we-aaa-prod-vn01-sn04 --resource-group rb-we-aaa-prod-csrcr-rg01 --vnet-name rb-we-aaa-prod-vn01
+az network vnet create --name  rb-sea-aaa-prod-vn01 --resource-group  rb-sea-aaa-prod-csrcr-rg01 --location northeurope --address-prefix 192.168.128.0/20 --tags App=AAA Stage=Prod
+az network vnet subnet create --address-prefix 192.168.112.0/24 --name rb-we-aaa-prod-vn01-sn01 --resource-group rb-we-aaa-prod-csrcr-rg01 --vnet-name rb-we-aaa-prod-vn01
+az network vnet subnet create --address-prefix 192.168.113.0/24 --name rb-we-aaa-prod-vn01-sn02 --resource-group rb-we-aaa-prod-csrcr-rg01 --vnet-name rb-we-aaa-prod-vn01
+az network vnet subnet create --address-prefix 192.168.114.0/24 --name rb-we-aaa-prod-vn01-sn03 --resource-group rb-we-aaa-prod-csrcr-rg01 --vnet-name rb-we-aaa-prod-vn01
+az network vnet subnet create --address-prefix 192.168.115.0/24 --name rb-we-aaa-prod-vn01-sn04 --resource-group rb-we-aaa-prod-csrcr-rg01 --vnet-name rb-we-aaa-prod-vn01
+az network vnet create --name  rb-eus-aaa-prod-vn01 --resource-group  rb-eus-aaa-prod-csrcr-rg01 --location eastus --address-prefix 192.168.144.0/20 --tags App=AAA Stage=Prod
+az network vnet subnet create --address-prefix 192.168.144.0/24 --name rb-eus-aaa-prod-vn01-sn01 --resource-group rb-eus-aaa-prod-csrcr-rg01 --vnet-name rb-eus-aaa-prod-vn01
+az network vnet subnet create --address-prefix 192.168.145.0/24 --name rb-eus-aaa-prod-vn01-sn02 --resource-group rb-eus-aaa-prod-csrcr-rg01 --vnet-name rb-eus-aaa-prod-vn01
+az network vnet subnet create --address-prefix 192.168.146.0/24 --name rb-eus-aaa-prod-vn01-sn03 --resource-group rb-eus-aaa-prod-csrcr-rg01 --vnet-name rb-eus-aaa-prod-vn01
+az network vnet subnet create --address-prefix 192.168.147.0/24 --name rb-eus-aaa-prod-vn01-sn04 --resource-group rb-eus-aaa-prod-csrcr-rg01 --vnet-name rb-eus-aaa-prod-vn01

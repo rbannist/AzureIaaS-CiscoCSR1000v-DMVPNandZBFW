@@ -1,0 +1,385 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminUsername": {
+            "type": "string",
+            "metadata": {
+                "description": "Username for the Virtual Machine."
+            }
+        },
+        "adminPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Password for the Virtual Machine."
+            }
+        },
+        "serviceId": {
+            "type": "string",
+            "metadata": {
+                "description": "Name or ID of the top-level service that this infrastructure is underpinning."
+            }
+        },
+        "serviceStage": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Service stage that this infrastructure is underpinning."
+            }
+        },
+        "commonResourcesResourceGroupName": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Name of the Resource Group that hosts common resources used by CSR 1000v VMs."
+            }
+        },
+        "vmName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the CSR 1000v VM."
+            }
+        },
+        "vmSize": {
+            "type": "string",
+            "metadata": {
+                "description": "Size of VM.  Please make sure that the SKU is available in the Azure Region being deployed to"
+            }
+        },
+        "availabilitySetName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the CSR 1000v VM Availability Set."
+            }
+        },
+        "diskStorageAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the OS disk Storage Account."
+            }
+        },
+        "diskStorageAccountResourceGroupName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the OS disk Storage Account Resource Group."
+            }
+        },
+        "diagStorageAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the Diagnostics Storage Account."
+            }
+        },
+        "diagStorageAccountResourceGroupName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the Diagnostics Storage Account Resource Group."
+            }
+        },
+        "virtualNetworkName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the existing virutal network the router will be deployed to."
+            }
+        },
+        "subnet1Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the first subnet."
+            }
+        },
+        "subnet2Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the second subnet."
+            }
+        },
+        "subnet3Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the third subnet."
+            }
+        },
+        "subnet4Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the fourth subnet."
+            }
+        },
+        "nic01NsgName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the NSG that will be applied to Nic01 - Mgmt."
+            }
+        },
+        "mgmtPublicIPAddressName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the PIP to set on Nic01 - Mgmt."
+            }
+        },
+        "mgmtPublicIPAddressResourceGroupName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the PIP - Mgmt Resource Group."
+            }
+        },
+        "dataPublicIPAddressName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the PIP to set on Nic02 - Data."
+            }
+        },
+        "dataPublicIPAddressResourceGroupName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the PIP - Data Resource Group."
+            }
+        }
+    },
+    "variables": {
+        "imagePublisher": "cisco",
+        "imageOffer": "cisco-csr-1000v",
+        "imageSKU": "csr-azure-byol",
+        "vmName": "[parameters('vmName')]",
+        "availabilitySetResourceId": "[resourceId('Microsoft.Compute/availabilitySets', parameters('availabilitySetName'))]",
+        "diskStorageAccountResourceId": "[resourceId(parameters('diskStorageAccountResourceGroupName'), 'Microsoft.Storage/storageAccounts', parameters('diskStorageAccountName'))]",
+        "diagStorageAccountResourceId": "[resourceId(parameters('diagStorageAccountResourceGroupName'), 'Microsoft.Storage/storageAccounts', parameters('diagStorageAccountName'))]",
+        "osDiskName": "[concat(parameters('vmName'), '-osdisk')]",
+        "mgmtPublicIPAddressResourceId": "[resourceId(parameters('mgmtPublicIPAddressResourceGroupName'), 'Microsoft.Network/publicIPAddresses', parameters('mgmtPublicIPAddressName'))]",
+        "dataPublicIPAddressResourceId": "[resourceId(parameters('dataPublicIPAddressResourceGroupName'), 'Microsoft.Network/publicIPAddresses', parameters('dataPublicIPAddressName'))]",
+        "subnet1ResourceId": "[resourceId(parameters('commonResourcesResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('Subnet1Name'))]",
+        "subnet2ResourceId": "[resourceId(parameters('commonResourcesResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('Subnet2Name'))]",
+        "subnet3ResourceId": "[resourceId(parameters('commonResourcesResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('Subnet3Name'))]",
+        "subnet4ResourceId": "[resourceId(parameters('commonResourcesResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('Subnet4Name'))]",
+        "nic0DnsPrefix": "[parameters('mgmtPublicIPAddressName')]",
+        "nic1DnsPrefix": "[parameters('dataPublicIPAddressName')]"
+    },
+    "resources": [
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "name": "[parameters('nic01NsgName')]",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "App": "[parameters('serviceId')]",
+                "Stage": "[parameters('serviceStage')]"
+            },
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "Allow-SSH-Internet-Any",
+                        "properties": {
+                            "description": "Allow SSH",
+                            "protocol": "Tcp",
+                            "sourcePortRange": "*",
+                            "destinationPortRange": "22",
+                            "sourceAddressPrefix": "Internet",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 100,
+                            "direction": "Inbound"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[concat(variables('vmName'),'-nic01')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nic01NsgName'))]"
+            ],
+            "tags": {
+                "App": "[parameters('serviceId')]",
+                "Stage": "[parameters('serviceStage')]"
+            },
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[string(take(split(replace(reference(variables('subnet1ResourceId'), providers('Microsoft.Network', 'virtualNetworks').apiVersions[0]).addressPrefix, '0/', '4/'), '/'), 1)[0])]",
+                            "publicIPAddress": {
+                                "id": "[variables('mgmtPublicIPAddressResourceId')]"
+                              },
+                            "subnet": {
+                                "id": "[variables('subnet1ResourceId')]"
+                            }
+                        }
+                    }
+                ],
+                "enableIPForwarding": true,
+                "networkSecurityGroup": {
+                    "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nic01NsgName'))]"
+                }
+            }
+        },
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[concat(variables('vmName'),'-nic02')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [  ],
+            "tags": {
+                "App": "[parameters('serviceId')]",
+                "Stage": "[parameters('serviceStage')]"
+            },
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[string(take(split(replace(reference(variables('subnet2ResourceId'), providers('Microsoft.Network', 'virtualNetworks').apiVersions[0]).addressPrefix, '0/', '4/'), '/'), 1)[0])]",
+                            "publicIPAddress": {
+                                "id": "[variables('dataPublicIPAddressResourceId')]"
+                              },
+                            "subnet": {
+                                "id": "[variables('subnet2ResourceId')]"
+                            }
+                        }
+                    }
+                ],
+                "enableIPForwarding": true
+            }
+        },
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[concat(variables('vmName'),'-nic03')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [  ],
+            "tags": {
+                "App": "[parameters('serviceId')]",
+                "Stage": "[parameters('serviceStage')]"
+            },
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[string(take(split(replace(reference(variables('subnet3ResourceId'), providers('Microsoft.Network', 'virtualNetworks').apiVersions[0]).addressPrefix, '0/', '4/'), '/'), 1)[0])]",
+                            "subnet": {
+                                "id": "[variables('subnet3ResourceId')]"
+                            }
+                        }
+                    }
+                ],
+                "enableIPForwarding": true
+            }
+        },
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[concat(variables('vmName'),'-nic04')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [  ],
+            "tags": {
+                "App": "[parameters('serviceId')]",
+                "Stage": "[parameters('serviceStage')]"
+            },
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[string(take(split(replace(reference(variables('subnet4ResourceId'), providers('Microsoft.Network', 'virtualNetworks').apiVersions[0]).addressPrefix, '0/', '4/'), '/'), 1)[0])]",
+                            "subnet": {
+                                "id": "[variables('subnet4ResourceId')]"
+                            }
+                        }
+                    }
+                ],
+                "enableIPForwarding": true
+            }
+        },
+        {
+            "apiVersion": "2015-06-15",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[variables('vmName')]",
+            "location": "[resourceGroup().location]",
+            "plan": {
+                "name": "csr-azure-byol",
+                "publisher": "cisco",
+                "product": "cisco-csr-1000v"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/networkInterfaces/', concat(variables('vmName'), '-nic01'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces/', concat(variables('vmName'), '-nic02'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces/', concat(variables('vmName'), '-nic03'))]",
+                "[resourceId('Microsoft.Network/networkInterfaces/', concat(variables('vmName'), '-nic04'))]"
+            ],
+            "tags": {
+                "App": "[parameters('serviceId')]",
+                "Stage": "[parameters('serviceStage')]"
+            },
+            "properties": {
+                "availabilitySet": {
+                    "id": "[variables('availabilitySetResourceId')]"
+                  },
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "osProfile": {
+                    "computerName": "[variables('vmName')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "[variables('imagePublisher')]",
+                        "offer": "[variables('imageOffer')]",
+                        "sku": "[variables('imageSKU')]",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "name": "[variables('osDiskName')]",
+                        "vhd": {
+                            "uri": "[concat('https://', parameters('diskStorageAccountName'), '.blob.core.windows.net/vhds/', variables('osDiskName'), '.vhd')]"
+                        },
+                        "caching": "ReadWrite",
+                        "createOption": "FromImage"
+                    }
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "properties": {
+                                "primary": true
+                            },
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('vmName'),'-nic01'))]"
+                        },
+                        {
+                            "properties": {
+                                "primary": false
+                            },
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('vmName'),'-nic02'))]"
+                        },
+                        {
+                            "properties": {
+                                "primary": false
+                            },
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('vmName'),'-nic03'))]"
+                        },
+                        {
+                            "properties": {
+                                "primary": false
+                            },
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(variables('vmName'),'-nic04'))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": "true",
+                        "storageUri": "[concat('https://', parameters('diagStorageAccountName'), '.blob.core.windows.net')]"
+                    }
+                }
+            }
+        }
+    ]
+}

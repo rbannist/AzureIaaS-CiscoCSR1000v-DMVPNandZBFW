@@ -1,0 +1,77 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "serviceId": {
+        "value": "AAA"
+      },
+      "serviceStage": {
+        "value": "DevQA"
+      },
+      "adminUsername": {
+        "value": "rbadmin"
+      },
+      "adminPassword": {
+        "reference": {
+          "keyVault": {
+            "id": "/subscriptions/4e9cca18-596f-44ec-a180-a35f274c4a10/resourceGroups/rb-we-aaa-kv-rg01/providers/Microsoft.KeyVault/vaults/rb-we-aaa-kv01"
+          },
+          "secretName": "csradminpassword"
+        }
+    },
+      "commonResourcesResourceGroupName": {
+        "value": "rb-wus-aaa-dqa-csrcr-rg01"
+      },
+      "vmName": {
+        "value": "rb-wus-aaa-dqa-csrvm102"
+      },
+      "vmSize": {
+        "value": "Standard_D3_v2"
+      },
+      "availabilitySetName": {
+        "value": "rb-wus-aaa-dqa-csrvm-as01"
+      },
+      "diskStorageAccountName": {
+        "value": "rbwusaaadqasadisk01"
+      },
+      "diskStorageAccountResourceGroupName": {
+        "value": "rb-wus-aaa-dqa-sdisk-rg01"
+      },
+      "diagStorageAccountName": {
+        "value": "rbwusaaadqasadiag01"
+      },
+      "diagStorageAccountResourceGroupName": {
+        "value": "rb-wus-aaa-dqa-sdiag-rg01"
+      },
+      "virtualNetworkName": {
+        "value": "rb-wus-aaa-dqa-vn01"
+      },
+      "subnet1Name": {
+        "value": "rb-wus-aaa-dqa-vn01-sn01"
+      },
+      "subnet2Name": {
+        "value": "rb-wus-aaa-dqa-vn01-sn02"
+      },
+      "subnet3Name": {
+        "value": "rb-wus-aaa-dqa-vn01-sn03"
+      },
+      "subnet4Name": {
+        "value": "rb-wus-aaa-dqa-vn01-sn04"
+      },
+      "nic01NsgName": {
+        "value": "rb-wus-aaa-dqa-nsgcsr102nic01"
+      },
+      "mgmtPublicIPAddressName": {
+        "value": "rb-wus-aaa-dqa-pipm02"
+      },
+      "mgmtPublicIPAddressResourceGroupName": {
+        "value": "rb-wus-aaa-dqa-pipm-rg01"
+      },
+      "dataPublicIPAddressName": {
+        "value": "rb-wus-aaa-dqa-pipd02"
+      }, 
+      "dataPublicIPAddressResourceGroupName": {
+        "value": "rb-wus-aaa-dqa-pipd-rg01"
+      }
+    }
+  }

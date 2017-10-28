@@ -1,0 +1,24 @@
+az network public-ip create --resource-group rb-we-aaa-dqa-csrcr-rg01 --name rb-we-aaa-dqa-pipm01 --dns-name rb-we-aaa-dqa-pipm01 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-we-aaa-dqa-csrcr-rg01 --name rb-we-aaa-dqa-pipm02 --dns-name rb-we-aaa-dqa-pipm02 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-we-aaa-dqa-csrcr-rg01 --name rb-we-aaa-dqa-pipd01 --dns-name rb-we-aaa-dqa-pipd01 --allocation-method Static --tags App=AAA Stage=Prod
+az network public-ip create --resource-group rb-we-aaa-dqa-csrcr-rg01 --name rb-we-aaa-dqa-pipd02 --dns-name rb-we-aaa-dqa-pipd02 --allocation-method Static --tags App=AAA Stage=Prod
+az network public-ip create --resource-group rb-sea-aaa-dqa-csrcr-rg01 --name rb-sea-aaa-dqa-pipm01 --dns-name rb-sea-aaa-dqa-pipm01 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-sea-aaa-dqa-csrcr-rg01 --name rb-sea-aaa-dqa-pipm02 --dns-name rb-sea-aaa-dqa-pipm02 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-sea-aaa-dqa-csrcr-rg01 --name rb-sea-aaa-dqa-pipd01 --dns-name rb-sea-aaa-dqa-pipd01 --allocation-method Static --tags App=AAA Stage=Prod
+az network public-ip create --resource-group rb-sea-aaa-dqa-csrcr-rg01 --name rb-sea-aaa-dqa-pipd02 --dns-name rb-sea-aaa-dqa-pipd02 --allocation-method Static --tags App=AAA Stage=Prod
+az network public-ip create --resource-group rb-eus-aaa-dqa-csrcr-rg01 --name rb-eus-aaa-dqa-pipm01 --dns-name rb-eus-aaa-dqa-pipm01 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-eus-aaa-dqa-csrcr-rg01 --name rb-eus-aaa-dqa-pipm02 --dns-name rb-eus-aaa-dqa-pipm02 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-eus-aaa-dqa-csrcr-rg01 --name rb-eus-aaa-dqa-pipd01 --dns-name rb-eus-aaa-dqa-pipd01 --allocation-method Static --tags App=AAA Stage=Prod
+az network public-ip create --resource-group rb-eus-aaa-dqa-csrcr-rg01 --name rb-eus-aaa-dqa-pipd02 --dns-name rb-eus-aaa-dqa-pipd02 --allocation-method Static --tags App=AAA Stage=Prod
+az network public-ip create --resource-group rb-we-aaa-prod-csrcr-rg01 --name rb-we-aaa-prod-pipm01 --dns-name rb-we-aaa-prod-pipm01 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-we-aaa-prod-csrcr-rg01 --name rb-we-aaa-prod-pipm02 --dns-name rb-we-aaa-prod-pipm02 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-we-aaa-prod-csrcr-rg01 --name rb-we-aaa-prod-pipd01 --dns-name rb-we-aaa-prod-pipd01 --allocation-method Static --tags App=AAA Stage=Prod
+az network public-ip create --resource-group rb-we-aaa-prod-csrcr-rg01 --name rb-we-aaa-prod-pipd02 --dns-name rb-we-aaa-prod-pipd02 --allocation-method Static --tags App=AAA Stage=Prod
+az network public-ip create --resource-group rb-sea-aaa-prod-csrcr-rg01 --name rb-sea-aaa-prod-pipm01 --dns-name rb-sea-aaa-prod-pipm01 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-sea-aaa-prod-csrcr-rg01 --name rb-sea-aaa-prod-pipm02 --dns-name rb-sea-aaa-prod-pipm02 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-sea-aaa-prod-csrcr-rg01 --name rb-sea-aaa-prod-pipd01 --dns-name rb-sea-aaa-prod-pipd01 --allocation-method Static --tags App=AAA Stage=Prod
+az network public-ip create --resource-group rb-sea-aaa-prod-csrcr-rg01 --name rb-sea-aaa-prod-pipd02 --dns-name rb-sea-aaa-prod-pipd02 --allocation-method Static --tags App=AAA Stage=Prod
+az network public-ip create --resource-group rb-eus-aaa-prod-csrcr-rg01 --name rb-eus-aaa-prod-pipm01 --dns-name rb-eus-aaa-prod-pipm01 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-eus-aaa-prod-csrcr-rg01 --name rb-eus-aaa-prod-pipm02 --dns-name rb-eus-aaa-prod-pipm02 --tags App=AAA Stage=DevQA
+az network public-ip create --resource-group rb-eus-aaa-prod-csrcr-rg01 --name rb-eus-aaa-prod-pipd01 --dns-name rb-eus-aaa-prod-pipd01 --allocation-method Static --tags App=AAA Stage=Prod
+az network public-ip create --resource-group rb-eus-aaa-prod-csrcr-rg01 --name rb-eus-aaa-prod-pipd02 --dns-name rb-eus-aaa-prod-pipd02 --allocation-method Static --tags App=AAA Stage=Prod

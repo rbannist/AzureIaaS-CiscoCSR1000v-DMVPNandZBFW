@@ -1,0 +1,6 @@
+az vm availability-set create --name  rb-we-aaa-dqa-csrvm-as01 --resource-group rb-we-aaa-dqa-csrvm-rg01 --platform-fault-domain-count 3 --platform-update-domain-count 4  --tags App=AAA Stage=DevQA
+az vm availability-set create --name  rb-sea-aaa-dqa-csrvm-as01 --resource-group rb-sea-aaa-dqa-csrvm-rg01 --platform-fault-domain-count 3 --platform-update-domain-count 4  --tags App=AAA Stage=DevQA
+az vm availability-set create --name  rb-eus-aaa-dqa-csrvm-as01 --resource-group rb-eus-aaa-dqa-csrvm-rg01 --platform-fault-domain-count 3 --platform-update-domain-count 4  --tags App=AAA Stage=DevQA
+az vm availability-set create --name  rb-we-aaa-prod-csrvm-as01 --resource-group rb-we-aaa-prod-csrvm-rg01 --platform-fault-domain-count 3 --platform-update-domain-count 4  --tags App=AAA Stage=Prod
+az vm availability-set create --name  rb-sea-aaa-prod-csrvm-as01 --resource-group rb-sea-aaa-prod-csrvm-rg01 --platform-fault-domain-count 3 --platform-update-domain-count 4  --tags App=AAA Stage=Prod
+az vm availability-set create --name  rb-eus-aaa-prod-csrvm-as01 --resource-group rb-eus-aaa-prod-csrvm-rg01 --platform-fault-domain-count 3 --platform-update-domain-count 4  --tags App=AAA Stage=Prod

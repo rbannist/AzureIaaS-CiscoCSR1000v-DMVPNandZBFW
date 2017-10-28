@@ -1,0 +1,12 @@
+az storage account create --resource-group rb-we-aaa-dqa-sdisk-rg01 --location westeurope --name rbweaaadqasadisk01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=DevQA
+az storage account create --resource-group rb-sea-aaa-dqa-sdisk-rg01 --location southeastasia --name rbseaaaadqasadisk01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=DevQA
+az storage account create --resource-group rb-eus-aaa-dqa-sdisk-rg01 --location eastus --name rbeusaaadqasadisk01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=DevQA
+az storage account create --resource-group rb-we-aaa-prod-sdisk-rg01 --location westeurope --name rbweaaaprodsadisk01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=Prod
+az storage account create --resource-group rb-sea-aaa-prod-sdisk-rg01 --location southeastasia --name rbseaaaaprodsadisk01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=Prod
+az storage account create --resource-group rb-eus-aaa-prod-sdisk-rg01 --location eastus --name rbeusaaaprodsadisk01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=Prod
+az storage account create --resource-group rb-we-aaa-dqa-sdiag-rg01 --location westeurope --name rbweaaadqasadiag01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=DevQA
+az storage account create --resource-group rb-sea-aaa-dqa-sdiag-rg01 --location southeastasia --name rbseaaaadqasadiag01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=DevQA
+az storage account create --resource-group rb-eus-aaa-dqa-sdiag-rg01 --location eastus --name rbeusaaadqasadiag01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=DevQA
+az storage account create --resource-group rb-we-aaa-prod-sdiag-rg01 --location westeurope --name rbweaaaprodsadiag01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=Prod
+az storage account create --resource-group rb-sea-aaa-prod-sdiag-rg01 --location southeastasia --name rbseaaaaprodsadiag01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=Prod
+az storage account create --resource-group rb-eus-aaa-prod-sdiag-rg01 --location eastus --name rbeusaaaprodsadiag01 --sku Standard_LRS --kind Storage --tags App=AAA Stage=Prod
