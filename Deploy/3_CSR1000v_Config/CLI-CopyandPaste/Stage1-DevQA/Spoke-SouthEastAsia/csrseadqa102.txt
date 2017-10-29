@@ -418,10 +418,10 @@ interface Tunnel200
  ip pim nbma-mode
  ip pim sparse-mode
  ip nhrp authentication M5FT123
- ip nhrp map 172.16.0.1 104.45.12.92
- ip nhrp map 172.16.0.2 104.46.59.128
- ip nhrp map multicast 104.45.12.92
- ip nhrp map multicast 104.46.59.128
+ ip nhrp map 172.16.0.1 <?PIPD01?>
+ ip nhrp map 172.16.0.2 <?PIPD02?>
+ ip nhrp map multicast <?PIPD01?>
+ ip nhrp map multicast <?PIPD02?>
  ip nhrp network-id 1
  ip nhrp nhs 172.16.0.1 priority 10 cluster 1
  ip nhrp nhs 172.16.0.2 priority 20 cluster 1
