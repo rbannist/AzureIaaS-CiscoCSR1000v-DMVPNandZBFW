@@ -1,5 +1,5 @@
 ﻿$App = "AAA"
-$Appcode" = "aaa"
+$Appcode = "aaa"
 $Stage1 = "DevQA"
 $Stage2 = "Prod"
 $Stage1code = "dqa"
@@ -43,7 +43,7 @@ $Site2Stage1InsideSubnetName = "rb-$Site2code-$Appcode-$Stage1code-vn01-sn04"
 $Site2Stage2MgmtSubnetName = "rb-$Site2code-$Appcode-$Stage2code-vn01-sn01"
 $Site2Stage2OutsideSubnetName = "rb-$Site2code-$Appcode-$Stage2code-vn01-sn02"
 $Site2Stage2DMZSubnetName = "rb-$Site2code-$Appcode-$Stage2code-vn01-sn03"
-$Site2Stage2InsideSubnetName = "rb-$Site2code-$Appcode-$Stagecode-vn01-sn04"
+$Site2Stage2InsideSubnetName = "rb-$Site2code-$Appcode-$Stage2code-vn01-sn04"
 $Site3Stage1MgmtSubnetName = "rb-$Site3code-$Appcode-$Stage1code-vn01-sn01"
 $Site3Stage1OutsideSubnetName = "rb-$Site3code-$Appcode-$Stage1code-vn01-sn02"
 $Site3Stage1DMZSubnetName = "rb-$Site3code-$Appcode-$Stage1code-vn01-sn03"
@@ -107,5 +107,4 @@ New-AzureRmVirtualNetwork -Name $Site1Stage1VNETName -ResourceGroupName $Site1St
 New-AzureRmVirtualNetwork -Name $Site1Stage2VNETName -ResourceGroupName $Site1Stage2CRRG -Location $Site1 -AddressPrefix $Site1Stage2AddressPrefix -Subnet $Site1Stage2MgmtSubnet,$Site1Stage2OutsideSubnet,$Site1Stage2DMZSubnet,$Site1Stage2InsideSubnet -Tag @{ App="$App";  Stage="$Stage2" }
 New-AzureRmVirtualNetwork -Name $Site2Stage1VNETName -ResourceGroupName $Site2Stage1CRRG -Location $Site2 -AddressPrefix $Site2Stage1AddressPrefix -Subnet $Site2Stage1MgmtSubnet,$Site2Stage1OutsideSubnet,$Site2Stage1DMZSubnet,$Site2Stage1InsideSubnet -Tag @{ App="$App";  Stage="$Stage1" }
 New-AzureRmVirtualNetwork -Name $Site2Stage2VNETName -ResourceGroupName $Site2Stage2CRRG -Location $Site2 -AddressPrefix $Site2Stage2AddressPrefix -Subnet $Site2Stage2MgmtSubnet,$Site2Stage2OutsideSubnet,$Site2Stage2DMZSubnet,$Site2Stage2InsideSubnet -Tag @{ App="$App";  Stage="$Stage2" }
-New-AzureRmVirtualNetwork -Name $Site3Stage1VNETName -ResourceGroupName $Site3Stage1CRRG -Location $Site3 -AddressPrefix $Site3Stage1AddressPrefix -Subnet $Site3Stage1MgmtSubnet,$Site3Stage1OutsideSubnet,$Site3Stage1DMZSubnet,$Site3Stage1InsideSubnet -Tag @{ App="$App";  Stage="$Stage1" }
 New-AzureRmVirtualNetwork -Name $Site3Stage2VNETName -ResourceGroupName $Site3Stage2CRRG -Location $Site3 -AddressPrefix $Site3Stage2AddressPrefix -Subnet $Site3Stage2MgmtSubnet,$Site3Stage2OutsideSubnet,$Site3Stage2DMZSubnet,$Site3Stage2InsideSubnet -Tag @{ App="$App";  Stage="$Stage2" } 
