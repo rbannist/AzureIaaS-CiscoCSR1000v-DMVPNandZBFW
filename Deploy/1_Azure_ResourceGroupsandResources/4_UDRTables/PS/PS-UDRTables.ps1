@@ -1,4 +1,6 @@
-﻿$App = "AAA"
+﻿$Org = "RB"
+$Orgcode = "rb"
+$App = "AAA"
 $Appcode = "aaa"
 $Stage1 = "DevQA"
 $Stage2 = "Prod"
@@ -10,42 +12,42 @@ $Site3 = "eastus"
 $Site1code = "we"
 $Site2code = "sea"
 $Site3code = "eus"
-$Site1Stage1CRRG = "rb-$Site1code-$Appcode-$Stage1code-csrcr-rg01"
-$Site2Stage1CRRG = "rb-$Site2code-$Appcode-$Stage1code-csrcr-rg01"
-$Site3Stage1CRRG = "rb-$Site3code-$Appcode-$Stage1code-csrcr-rg01"
-$Site1Stage2CRRG = "rb-$Site1code-$Appcode-$Stage2code-csrcr-rg01"
-$Site2Stage2CRRG = "rb-$Site2code-$Appcode-$Stage2code-csrcr-rg01"
-$Site3Stage2CRRG = "rb-$Site3code-$Appcode-$Stage2code-csrcr-rg01"
-$Site1Stage1VNETName = "rb-$Site1code-$Appcode-$Stage1code-vn01"
-$Site2Stage1VNETName = "rb-$Site2code-$Appcode-$Stage1code-vn01"
-$Site3Stage1VNETName = "rb-$Site3code-$Appcode-$Stage1code-vn01"
-$Site1Stage2VNETName = "rb-$Site1code-$Appcode-$Stage2code-vn01"
-$Site2Stage2VNETName = "rb-$Site2code-$Appcode-$Stage2code-vn01"
-$Site3Stage2VNETName = "rb-$Site3code-$Appcode-$Stage2code-vn01"
-$Site1Stage1MgmtSubnetName = "rb-$Site1code-$Appcode-$Stage1code-vn01-sn01"
-$Site1Stage1OutsideSubnetName = "rb-$Site1code-$Appcode-$Stage1code-vn01-sn02"
-$Site1Stage1DMZSubnetName = "rb-$Site1code-$Appcode-$Stage1code-vn01-sn03"
-$Site1Stage1InsideSubnetName = "rb-$Site1code-$Appcode-$Stage1code-vn01-sn04"
-$Site1Stage2MgmtSubnetName = "rb-$Site1code-$Appcode-$Stage2code-vn01-sn01"
-$Site1Stage2OutsideSubnetName = "rb-$Site1code-$Appcode-$Stage2code-vn01-sn02"
-$Site1Stage2DMZSubnetName = "rb-$Site1code-$Appcode-$Stage2code-vn01-sn03"
-$Site1Stage2InsideSubnetName = "rb-$Site1code-$Appcode-$Stage2code-vn01-sn04"
-$Site2Stage1MgmtSubnetName = "rb-$Site2code-$Appcode-$Stage1code-vn01-sn01"
-$Site2Stage1OutsideSubnetName = "rb-$Site2code-$Appcode-$Stage1code-vn01-sn02"
-$Site2Stage1DMZSubnetName = "rb-$Site2code-$Appcode-$Stage1code-vn01-sn03"
-$Site2Stage1InsideSubnetName = "rb-$Site2code-$Appcode-$Stage1code-vn01-sn04"
-$Site2Stage2MgmtSubnetName = "rb-$Site2code-$Appcode-$Stage2code-vn01-sn01"
-$Site2Stage2OutsideSubnetName = "rb-$Site2code-$Appcode-$Stage2code-vn01-sn02"
-$Site2Stage2DMZSubnetName = "rb-$Site2code-$Appcode-$Stage2code-vn01-sn03"
-$Site2Stage2InsideSubnetName = "rb-$Site2code-$Appcode-$Stage2code-vn01-sn04"
-$Site3Stage1MgmtSubnetName = "rb-$Site3code-$Appcode-$Stage1code-vn01-sn01"
-$Site3Stage1OutsideSubnetName = "rb-$Site3code-$Appcode-$Stage1code-vn01-sn02"
-$Site3Stage1DMZSubnetName = "rb-$Site3code-$Appcode-$Stage1code-vn01-sn03"
-$Site3Stage1InsideSubnetName = "rb-$Site3code-$Appcode-$Stage1code-vn01-sn04"
-$Site3Stage2MgmtSubnetName = "rb-$Site3code-$Appcode-$Stage2code-vn01-sn01"
-$Site3Stage2OutsideSubnetName = "rb-$Site3code-$Appcode-$Stage2code-vn01-sn02"
-$Site3Stage2DMZSubnetName = "rb-$Site3code-$Appcode-$Stage2code-vn01-sn03"
-$Site3Stage2InsideSubnetName = "rb-$Site3code-$Appcode-$Stage2code-vn01-sn04"
+$Site1Stage1CRRG = "$Orgcode-$Site1code-$Appcode-$Stage1code-csrcr-rg01"
+$Site2Stage1CRRG = "$Orgcode-$Site2code-$Appcode-$Stage1code-csrcr-rg01"
+$Site3Stage1CRRG = "$Orgcode-$Site3code-$Appcode-$Stage1code-csrcr-rg01"
+$Site1Stage2CRRG = "$Orgcode-$Site1code-$Appcode-$Stage2code-csrcr-rg01"
+$Site2Stage2CRRG = "$Orgcode-$Site2code-$Appcode-$Stage2code-csrcr-rg01"
+$Site3Stage2CRRG = "$Orgcode-$Site3code-$Appcode-$Stage2code-csrcr-rg01"
+$Site1Stage1VNETName = "$Orgcode-$Site1code-$Appcode-$Stage1code-vn01"
+$Site2Stage1VNETName = "$Orgcode-$Site2code-$Appcode-$Stage1code-vn01"
+$Site3Stage1VNETName = "$Orgcode-$Site3code-$Appcode-$Stage1code-vn01"
+$Site1Stage2VNETName = "$Orgcode-$Site1code-$Appcode-$Stage2code-vn01"
+$Site2Stage2VNETName = "$Orgcode-$Site2code-$Appcode-$Stage2code-vn01"
+$Site3Stage2VNETName = "$Orgcode-$Site3code-$Appcode-$Stage2code-vn01"
+$Site1Stage1MgmtSubnetName = "$Orgcode-$Site1code-$Appcode-$Stage1code-vn01-sn01"
+$Site1Stage1OutsideSubnetName = "$Orgcode-$Site1code-$Appcode-$Stage1code-vn01-sn02"
+$Site1Stage1DMZSubnetName = "$Orgcode-$Site1code-$Appcode-$Stage1code-vn01-sn03"
+$Site1Stage1InsideSubnetName = "$Orgcode-$Site1code-$Appcode-$Stage1code-vn01-sn04"
+$Site1Stage2MgmtSubnetName = "$Orgcode-$Site1code-$Appcode-$Stage2code-vn01-sn01"
+$Site1Stage2OutsideSubnetName = "$Orgcode-$Site1code-$Appcode-$Stage2code-vn01-sn02"
+$Site1Stage2DMZSubnetName = "$Orgcode-$Site1code-$Appcode-$Stage2code-vn01-sn03"
+$Site1Stage2InsideSubnetName = "$Orgcode-$Site1code-$Appcode-$Stage2code-vn01-sn04"
+$Site2Stage1MgmtSubnetName = "$Orgcode-$Site2code-$Appcode-$Stage1code-vn01-sn01"
+$Site2Stage1OutsideSubnetName = "$Orgcode-$Site2code-$Appcode-$Stage1code-vn01-sn02"
+$Site2Stage1DMZSubnetName = "$Orgcode-$Site2code-$Appcode-$Stage1code-vn01-sn03"
+$Site2Stage1InsideSubnetName = "$Orgcode-$Site2code-$Appcode-$Stage1code-vn01-sn04"
+$Site2Stage2MgmtSubnetName = "$Orgcode-$Site2code-$Appcode-$Stage2code-vn01-sn01"
+$Site2Stage2OutsideSubnetName = "$Orgcode-$Site2code-$Appcode-$Stage2code-vn01-sn02"
+$Site2Stage2DMZSubnetName = "$Orgcode-$Site2code-$Appcode-$Stage2code-vn01-sn03"
+$Site2Stage2InsideSubnetName = "$Orgcode-$Site2code-$Appcode-$Stage2code-vn01-sn04"
+$Site3Stage1MgmtSubnetName = "$Orgcode-$Site3code-$Appcode-$Stage1code-vn01-sn01"
+$Site3Stage1OutsideSubnetName = "$Orgcode-$Site3code-$Appcode-$Stage1code-vn01-sn02"
+$Site3Stage1DMZSubnetName = "$Orgcode-$Site3code-$Appcode-$Stage1code-vn01-sn03"
+$Site3Stage1InsideSubnetName = "$Orgcode-$Site3code-$Appcode-$Stage1code-vn01-sn04"
+$Site3Stage2MgmtSubnetName = "$Orgcode-$Site3code-$Appcode-$Stage2code-vn01-sn01"
+$Site3Stage2OutsideSubnetName = "$Orgcode-$Site3code-$Appcode-$Stage2code-vn01-sn02"
+$Site3Stage2DMZSubnetName = "$Orgcode-$Site3code-$Appcode-$Stage2code-vn01-sn03"
+$Site3Stage2InsideSubnetName = "$Orgcode-$Site3code-$Appcode-$Stage2code-vn01-sn04"
 $Site1Stage1MgmtSubnetPrefix = "192.168.0.0/24"
 $Site1Stage1OutsideSubnetPrefix = "192.168.1.0/24"
 $Site1Stage1DMZSubnetPrefix = "192.168.2.0/24"
@@ -94,30 +96,30 @@ $Site3Stage2MgmtCSR1IP = "192.168.144.4"
 $Site3Stage2OutsideCSR1IP = "192.168.145.4"
 $Site3Stage2DMZCSR1IP = "192.168.146.4"
 $Site3Stage2InsideCSR1IP = "192.168.147.4"
-$Site1Stage1MgmtUDRName = "rb-$Site1code-$Appcode-$Stage1code-udrvn01sn01"
-$Site1Stage1OutsideUDRName = "rb-$Site1code-$Appcode-$Stage1code-udrvn01sn02"
-$Site1Stage1DMZUDRName = "rb-$Site1code-$Appcode-$Stage1code-udrvn01sn03"
-$Site1Stage1InsideUDRName = "rb-$Site1code-$Appcode-$Stage1code-udrvn01sn04"
-$Site1Stage2MgmtUDRName = "rb-$Site1code-$Appcode-$Stage2code-udrvn01sn01"
-$Site1Stage2OutsideUDRName = "rb-$Site1code-$Appcode-$Stage2code-udrvn01sn02"
-$Site1Stage2DMZUDRName = "rb-$Site1code-$Appcode-$Stage2code-udrvn01sn03"
-$Site1Stage2InsideUDRName = "rb-$Site1code-$Appcode-$Stage2code-udrvn01sn04"
-$Site2Stage1MgmtUDRName = "rb-$Site2code-$Appcode-$Stage1code-udrvn01sn01"
-$Site2Stage1OutsideUDRName = "rb-$Site2code-$Appcode-$Stage1code-udrvn01sn02"
-$Site2Stage1DMZUDRName = "rb-$Site2code-$Appcode-$Stage1code-udrvn01sn03"
-$Site2Stage1InsideUDRName = "rb-$Site2code-$Appcode-$Stage1code-udrvn01sn04"
-$Site2Stage2MgmtUDRName = "rb-$Site2code-$Appcode-$Stage2code-udrvn01sn01"
-$Site2Stage2OutsideUDRName = "rb-$Site2code-$Appcode-$Stage2code-udrvn01sn02"
-$Site2Stage2DMZUDRName = "rb-$Site2code-$Appcode-$Stage2code-udrvn01sn03"
-$Site2Stage2InsideUDRName = "rb-$Site2code-$Appcode-$Stage2code-udrvn01sn04"
-$Site3Stage1MgmtUDRName = "rb-$Site3code-$Appcode-$Stage1code-udrvn01sn01"
-$Site3Stage1OutsideUDRName = "rb-$Site3code-$Appcode-$Stage1code-udrvn01sn02"
-$Site3Stage1DMZUDRName = "rb-$Site3code-$Appcode-$Stage1code-udrvn01sn03"
-$Site3Stage1InsideUDRName = "rb-$Site3code-$Appcode-$Stage1code-udrvn01sn04"
-$Site3Stage2MgmtUDRName = "rb-$Site3code-$Appcode-$Stage2code-udrvn01sn01"
-$Site3Stage2OutsideUDRName = "rb-$Site3code-$Appcode-$Stage2code-udrvn01sn02"
-$Site3Stage2DMZUDRName = "rb-$Site3code-$Appcode-$Stage2code-udrvn01sn03"
-$Site3Stage2InsideUDRName = "rb-$Site3code-$Appcode-$Stage2code-udrvn01sn04"
+$Site1Stage1MgmtUDRName = "$Orgcode-$Site1code-$Appcode-$Stage1code-udrvn01sn01"
+$Site1Stage1OutsideUDRName = "$Orgcode-$Site1code-$Appcode-$Stage1code-udrvn01sn02"
+$Site1Stage1DMZUDRName = "$Orgcode-$Site1code-$Appcode-$Stage1code-udrvn01sn03"
+$Site1Stage1InsideUDRName = "$Orgcode-$Site1code-$Appcode-$Stage1code-udrvn01sn04"
+$Site1Stage2MgmtUDRName = "$Orgcode-$Site1code-$Appcode-$Stage2code-udrvn01sn01"
+$Site1Stage2OutsideUDRName = "$Orgcode-$Site1code-$Appcode-$Stage2code-udrvn01sn02"
+$Site1Stage2DMZUDRName = "$Orgcode-$Site1code-$Appcode-$Stage2code-udrvn01sn03"
+$Site1Stage2InsideUDRName = "$Orgcode-$Site1code-$Appcode-$Stage2code-udrvn01sn04"
+$Site2Stage1MgmtUDRName = "$Orgcode-$Site2code-$Appcode-$Stage1code-udrvn01sn01"
+$Site2Stage1OutsideUDRName = "$Orgcode-$Site2code-$Appcode-$Stage1code-udrvn01sn02"
+$Site2Stage1DMZUDRName = "$Orgcode-$Site2code-$Appcode-$Stage1code-udrvn01sn03"
+$Site2Stage1InsideUDRName = "$Orgcode-$Site2code-$Appcode-$Stage1code-udrvn01sn04"
+$Site2Stage2MgmtUDRName = "$Orgcode-$Site2code-$Appcode-$Stage2code-udrvn01sn01"
+$Site2Stage2OutsideUDRName = "$Orgcode-$Site2code-$Appcode-$Stage2code-udrvn01sn02"
+$Site2Stage2DMZUDRName = "$Orgcode-$Site2code-$Appcode-$Stage2code-udrvn01sn03"
+$Site2Stage2InsideUDRName = "$Orgcode-$Site2code-$Appcode-$Stage2code-udrvn01sn04"
+$Site3Stage1MgmtUDRName = "$Orgcode-$Site3code-$Appcode-$Stage1code-udrvn01sn01"
+$Site3Stage1OutsideUDRName = "$Orgcode-$Site3code-$Appcode-$Stage1code-udrvn01sn02"
+$Site3Stage1DMZUDRName = "$Orgcode-$Site3code-$Appcode-$Stage1code-udrvn01sn03"
+$Site3Stage1InsideUDRName = "$Orgcode-$Site3code-$Appcode-$Stage1code-udrvn01sn04"
+$Site3Stage2MgmtUDRName = "$Orgcode-$Site3code-$Appcode-$Stage2code-udrvn01sn01"
+$Site3Stage2OutsideUDRName = "$Orgcode-$Site3code-$Appcode-$Stage2code-udrvn01sn02"
+$Site3Stage2DMZUDRName = "$Orgcode-$Site3code-$Appcode-$Stage2code-udrvn01sn03"
+$Site3Stage2InsideUDRName = "$Orgcode-$Site3code-$Appcode-$Stage2code-udrvn01sn04"
 $routeVN1SN2NullonVN1SN1Name = "route-VN1SN1-Null"
 $routeVN1SN2NullonVN1SN1Name = "route-VN1SN2-Null"
 $routeVN1SN3NullonVN1SN1Name = "route-VN1SN3-Null"
@@ -130,7 +132,7 @@ $routeVN1SN3CSRGi4onVN1SN4Name = "route-VN1SN3-CSR-Gi4"
 $routeVN1SN4CSRGi4onVN1SN4Name = "route-VN1SN4-CSR-Gi4"
 
 
-$Site1Stage1MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage1CRRG" -Location "$Site1" -Name "$Site1Stage1MgmtUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site1Stage1MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage1CRRG" -Location "$Site1" -Name "$Site1Stage1MgmtUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site1Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site1Stage1CRRG" -Name "$Site1Stage1VNETName"
 $Site1Stage1MgmtSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site1Stage1VNETPSOut -Name "$Site1Stage1MgmtSubnetName" -AddressPrefix "$Site1Stage1MgmtSubnetPrefix" -RouteTable $Site1Stage1MgmtUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site1Stage1MgmtSubnetPSOut
@@ -139,12 +141,12 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN3NullonVN1SN1Name" -AddressPrefix "$Sit
 Add-AzureRmRouteConfig -Name "$routeVN1SN4NullonVN1SN1Name" -AddressPrefix "$Site1Stage1InsideSubnetPrefix" -RouteTable $Site1Stage1MgmtUDRPSOut -NextHopType None
 Set-AzureRmRouteTable -RouteTable $Site1Stage1MgmtUDRPSOut
 
-$Site1Stage1OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage1CRRG" -Location "$Site1" -Name "$Site1Stage1OutsideUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site1Stage1OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage1CRRG" -Location "$Site1" -Name "$Site1Stage1OutsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site1Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site1Stage1CRRG" -Name "$Site1Stage1VNETName"
 $Site1Stage1OutsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site1Stage1VNETPSOut -Name "$Site1Stage1OutsideSubnetName" -AddressPrefix "$Site1Stage1OutsideSubnetPrefix" -RouteTable $Site1Stage1OutsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site1Stage1OutsideSubnetPSOut
 
-$Site1Stage1DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage1CRRG" -Location "$Site1" -Name "$Site1Stage1DMZUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site1Stage1DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage1CRRG" -Location "$Site1" -Name "$Site1Stage1DMZUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site1Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site1Stage1CRRG" -Name "$Site1Stage1VNETName"
 $Site1Stage1DMZSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site1Stage1VNETPSOut -Name "$Site1Stage1DMZSubnetName" -AddressPrefix "$Site1Stage1DMZSubnetPrefix" -RouteTable $Site1Stage1DMZUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site1Stage1DMZSubnetPSOut
@@ -153,7 +155,7 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN2CSRGi3onVN1SN3Name" -AddressPrefix "$S
 Add-AzureRmRouteConfig -Name "$routeVN1SN4CSRGi3onVN1SN3Name" -AddressPrefix "$Site1Stage1InsideSubnetPrefix" -RouteTable $Site1Stage1DMZUDRPSOut -NextHopType VirtualAppliance -NextHopIpAddress "$Site1Stage1DMZCSR1IP"
 Set-AzureRmRouteTable -RouteTable $Site1Stage1DMZUDRPSOut
 
-$Site1Stage1InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage1CRRG" -Location "$Site1" -Name "$Site1Stage1InsideUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site1Stage1InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage1CRRG" -Location "$Site1" -Name "$Site1Stage1InsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site1Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site1Stage1CRRG" -Name "$Site1Stage1VNETName"
 $Site1Stage1InsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site1Stage1VNETPSOut -Name "$Site1Stage1InsideSubnetName" -AddressPrefix "$Site1Stage1InsideSubnetPrefix" -RouteTable $Site1Stage1InsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site1Stage1InsideSubnetPSOut
@@ -162,7 +164,7 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN3CSRGi4onVN1SN4Name" -AddressPrefix "$S
 Add-AzureRmRouteConfig -Name "$routeVN1SN4CSRGi4onVN1SN4Name" -AddressPrefix "$Site1Stage1DMZSubnetPrefix" -RouteTable $Site1Stage1InsideUDRPSOut -NextHopType VirtualAppliance -NextHopIpAddress "$Site1Stage1InsideCSR1IP"
 Set-AzureRmRouteTable -RouteTable $Site1Stage1InsideUDRPSOut
 
-$Site2Stage1MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage1CRRG" -Location "$Site2" -Name "$Site2Stage1MgmtUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site2Stage1MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage1CRRG" -Location "$Site2" -Name "$Site2Stage1MgmtUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site2Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site2Stage1CRRG" -Name "$Site2Stage1VNETName"
 $Site2Stage1MgmtSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site2Stage1VNETPSOut -Name "$Site2Stage1MgmtSubnetName" -AddressPrefix "$Site2Stage1MgmtSubnetPrefix" -RouteTable $Site2Stage1MgmtUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site2Stage1MgmtSubnetPSOut
@@ -171,12 +173,12 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN3NullonVN1SN1Name" -AddressPrefix "$Sit
 Add-AzureRmRouteConfig -Name "$routeVN1SN4NullonVN1SN1Name" -AddressPrefix "$Site2Stage1InsideSubnetPrefix" -RouteTable $Site2Stage1MgmtUDRPSOut -NextHopType None
 Set-AzureRmRouteTable -RouteTable $Site2Stage1MgmtUDRPSOut
 
-$Site2Stage1OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage1CRRG" -Location "$Site2" -Name "$Site2Stage1OutsideUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site2Stage1OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage1CRRG" -Location "$Site2" -Name "$Site2Stage1OutsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site2Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site2Stage1CRRG" -Name "$Site2Stage1VNETName"
 $Site2Stage1OutsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site2Stage1VNETPSOut -Name "$Site2Stage1OutsideSubnetName" -AddressPrefix "$Site2Stage1OutsideSubnetPrefix" -RouteTable $Site2Stage1OutsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site2Stage1OutsideSubnetPSOut
 
-$Site2Stage1DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage1CRRG" -Location "$Site2" -Name "$Site2Stage1DMZUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site2Stage1DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage1CRRG" -Location "$Site2" -Name "$Site2Stage1DMZUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site2Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site2Stage1CRRG" -Name "$Site2Stage1VNETName"
 $Site2Stage1DMZSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site2Stage1VNETPSOut -Name "$Site2Stage1DMZSubnetName" -AddressPrefix "$Site2Stage1DMZSubnetPrefix" -RouteTable $Site2Stage1DMZUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site2Stage1DMZSubnetPSOut
@@ -185,7 +187,7 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN2CSRGi3onVN1SN3Name" -AddressPrefix "$S
 Add-AzureRmRouteConfig -Name "$routeVN1SN4CSRGi3onVN1SN3Name" -AddressPrefix "$Site2Stage1InsideSubnetPrefix" -RouteTable $Site2Stage1DMZUDRPSOut -NextHopType VirtualAppliance -NextHopIpAddress "$Site2Stage1DMZCSR1IP"
 Set-AzureRmRouteTable -RouteTable $Site2Stage1DMZUDRPSOut
 
-$Site2Stage1InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage1CRRG" -Location "$Site2" -Name "$Site2Stage1InsideUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site2Stage1InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage1CRRG" -Location "$Site2" -Name "$Site2Stage1InsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site2Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site2Stage1CRRG" -Name "$Site2Stage1VNETName"
 $Site2Stage1InsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site2Stage1VNETPSOut -Name "$Site2Stage1InsideSubnetName" -AddressPrefix "$Site2Stage1InsideSubnetPrefix" -RouteTable $Site2Stage1InsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site2Stage1InsideSubnetPSOut
@@ -194,7 +196,7 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN3CSRGi4onVN1SN4Name" -AddressPrefix "$S
 Add-AzureRmRouteConfig -Name "$routeVN1SN4CSRGi4onVN1SN4Name" -AddressPrefix "$Site2Stage1DMZSubnetPrefix" -RouteTable $Site2Stage1InsideUDRPSOut -NextHopType VirtualAppliance -NextHopIpAddress "$Site2Stage1InsideCSR1IP"
 Set-AzureRmRouteTable -RouteTable $Site2Stage1InsideUDRPSOut
 
-$Site3Stage1MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage1CRRG" -Location "$Site3" -Name "$Site3Stage1MgmtUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site3Stage1MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage1CRRG" -Location "$Site3" -Name "$Site3Stage1MgmtUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site3Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site3Stage1CRRG" -Name "$Site3Stage1VNETName"
 $Site3Stage1MgmtSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site3Stage1VNETPSOut -Name "$Site3Stage1MgmtSubnetName" -AddressPrefix "$Site3Stage1MgmtSubnetPrefix" -RouteTable $Site3Stage1MgmtUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site3Stage1MgmtSubnetPSOut
@@ -203,12 +205,12 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN3NullonVN1SN1Name" -AddressPrefix "$Sit
 Add-AzureRmRouteConfig -Name "$routeVN1SN4NullonVN1SN1Name" -AddressPrefix "$Site3Stage1InsideSubnetPrefix" -RouteTable $Site3Stage1MgmtUDRPSOut -NextHopType None
 Set-AzureRmRouteTable -RouteTable $Site3Stage1MgmtUDRPSOut
 
-$Site3Stage1OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage1CRRG" -Location "$Site3" -Name "$Site3Stage1OutsideUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site3Stage1OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage1CRRG" -Location "$Site3" -Name "$Site3Stage1OutsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site3Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site3Stage1CRRG" -Name "$Site3Stage1VNETName"
 $Site3Stage1OutsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site3Stage1VNETPSOut -Name "$Site3Stage1OutsideSubnetName" -AddressPrefix "$Site3Stage1OutsideSubnetPrefix" -RouteTable $Site3Stage1OutsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site3Stage1OutsideSubnetPSOut
 
-$Site3Stage1DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage1CRRG" -Location "$Site3" -Name "$Site3Stage1DMZUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site3Stage1DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage1CRRG" -Location "$Site3" -Name "$Site3Stage1DMZUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site3Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site3Stage1CRRG" -Name "$Site3Stage1VNETName"
 $Site3Stage1DMZSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site3Stage1VNETPSOut -Name "$Site3Stage1DMZSubnetName" -AddressPrefix "$Site3Stage1DMZSubnetPrefix" -RouteTable $Site3Stage1DMZUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site3Stage1DMZSubnetPSOut
@@ -217,7 +219,7 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN2CSRGi3onVN1SN3Name" -AddressPrefix "$S
 Add-AzureRmRouteConfig -Name "$routeVN1SN4CSRGi3onVN1SN3Name" -AddressPrefix "$Site3Stage1InsideSubnetPrefix" -RouteTable $Site3Stage1DMZUDRPSOut -NextHopType VirtualAppliance -NextHopIpAddress "$Site3Stage1DMZCSR1IP"
 Set-AzureRmRouteTable -RouteTable $Site3Stage1DMZUDRPSOut
 
-$Site3Stage1InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage1CRRG" -Location "$Site3" -Name "$Site3Stage1InsideUDRName" -Tag @{ App="$App";  Stage="$Stage1" }
+$Site3Stage1InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage1CRRG" -Location "$Site3" -Name "$Site3Stage1InsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
 $Site3Stage1VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site3Stage1CRRG" -Name "$Site3Stage1VNETName"
 $Site3Stage1InsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site3Stage1VNETPSOut -Name "$Site3Stage1InsideSubnetName" -AddressPrefix "$Site3Stage1InsideSubnetPrefix" -RouteTable $Site3Stage1InsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site3Stage1InsideSubnetPSOut
@@ -226,7 +228,7 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN3CSRGi4onVN1SN4Name" -AddressPrefix "$S
 Add-AzureRmRouteConfig -Name "$routeVN1SN4CSRGi4onVN1SN4Name" -AddressPrefix "$Site3Stage1DMZSubnetPrefix" -RouteTable $Site3Stage1InsideUDRPSOut -NextHopType VirtualAppliance -NextHopIpAddress "$Site3Stage1InsideCSR1IP"
 Set-AzureRmRouteTable -RouteTable $Site3Stage1InsideUDRPSOut
 
-$Site1Stage2MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage2CRRG" -Location "$Site1" -Name "$Site1Stage2MgmtUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site1Stage2MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage2CRRG" -Location "$Site1" -Name "$Site1Stage2MgmtUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site1Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site1Stage2CRRG" -Name "$Site1Stage2VNETName"
 $Site1Stage2MgmtSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site1Stage2VNETPSOut -Name "$Site1Stage2MgmtSubnetName" -AddressPrefix "$Site1Stage2MgmtSubnetPrefix" -RouteTable $Site1Stage2MgmtUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site1Stage2MgmtSubnetPSOut
@@ -235,12 +237,12 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN3NullonVN1SN1Name" -AddressPrefix "$Sit
 Add-AzureRmRouteConfig -Name "$routeVN1SN4NullonVN1SN1Name" -AddressPrefix "$Site1Stage2InsideSubnetPrefix" -RouteTable $Site1Stage2MgmtUDRPSOut -NextHopType None
 Set-AzureRmRouteTable -RouteTable $Site1Stage2MgmtUDRPSOut
 
-$Site1Stage2OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage2CRRG" -Location "$Site1" -Name "$Site1Stage2OutsideUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site1Stage2OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage2CRRG" -Location "$Site1" -Name "$Site1Stage2OutsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site1Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site1Stage2CRRG" -Name "$Site1Stage2VNETName"
 $Site1Stage2OutsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site1Stage2VNETPSOut -Name "$Site1Stage2OutsideSubnetName" -AddressPrefix "$Site1Stage2OutsideSubnetPrefix" -RouteTable $Site1Stage2OutsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site1Stage2OutsideSubnetPSOut
 
-$Site1Stage2DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage2CRRG" -Location "$Site1" -Name "$Site1Stage2DMZUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site1Stage2DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage2CRRG" -Location "$Site1" -Name "$Site1Stage2DMZUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site1Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site1Stage2CRRG" -Name "$Site1Stage2VNETName"
 $Site1Stage2DMZSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site1Stage2VNETPSOut -Name "$Site1Stage2DMZSubnetName" -AddressPrefix "$Site1Stage2DMZSubnetPrefix" -RouteTable $Site1Stage2DMZUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site1Stage2DMZSubnetPSOut
@@ -249,7 +251,7 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN2CSRGi3onVN1SN3Name" -AddressPrefix "$S
 Add-AzureRmRouteConfig -Name "$routeVN1SN4CSRGi3onVN1SN3Name" -AddressPrefix "$Site1Stage2InsideSubnetPrefix" -RouteTable $Site1Stage2DMZUDRPSOut -NextHopType VirtualAppliance -NextHopIpAddress "$Site1Stage2DMZCSR1IP"
 Set-AzureRmRouteTable -RouteTable $Site1Stage2DMZUDRPSOut
 
-$Site1Stage2InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage2CRRG" -Location "$Site1" -Name "$Site1Stage2InsideUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site1Stage2InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site1Stage2CRRG" -Location "$Site1" -Name "$Site1Stage2InsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site1Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site1Stage2CRRG" -Name "$Site1Stage2VNETName"
 $Site1Stage2InsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site1Stage2VNETPSOut -Name "$Site1Stage2InsideSubnetName" -AddressPrefix "$Site1Stage2InsideSubnetPrefix" -RouteTable $Site1Stage2InsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site1Stage2InsideSubnetPSOut
@@ -258,7 +260,7 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN3CSRGi4onVN1SN4Name" -AddressPrefix "$S
 Add-AzureRmRouteConfig -Name "$routeVN1SN4CSRGi4onVN1SN4Name" -AddressPrefix "$Site1Stage2DMZSubnetPrefix" -RouteTable $Site1Stage2InsideUDRPSOut -NextHopType VirtualAppliance -NextHopIpAddress "$Site1Stage2InsideCSR1IP"
 Set-AzureRmRouteTable -RouteTable $Site1Stage2InsideUDRPSOut
 
-$Site2Stage2MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage2CRRG" -Location "$Site2" -Name "$Site2Stage2MgmtUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site2Stage2MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage2CRRG" -Location "$Site2" -Name "$Site2Stage2MgmtUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site2Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site2Stage2CRRG" -Name "$Site2Stage2VNETName"
 $Site2Stage2MgmtSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site2Stage2VNETPSOut -Name "$Site2Stage2MgmtSubnetName" -AddressPrefix "$Site2Stage2MgmtSubnetPrefix" -RouteTable $Site2Stage2MgmtUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site2Stage2MgmtSubnetPSOut
@@ -267,12 +269,12 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN3NullonVN1SN1Name" -AddressPrefix "$Sit
 Add-AzureRmRouteConfig -Name "$routeVN1SN4NullonVN1SN1Name" -AddressPrefix "$Site2Stage2InsideSubnetPrefix" -RouteTable $Site2Stage2MgmtUDRPSOut -NextHopType None
 Set-AzureRmRouteTable -RouteTable $Site2Stage2MgmtUDRPSOut
 
-$Site2Stage2OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage2CRRG" -Location "$Site2" -Name "$Site2Stage2OutsideUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site2Stage2OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage2CRRG" -Location "$Site2" -Name "$Site2Stage2OutsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site2Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site2Stage2CRRG" -Name "$Site2Stage2VNETName"
 $Site2Stage2OutsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site2Stage2VNETPSOut -Name "$Site2Stage2OutsideSubnetName" -AddressPrefix "$Site2Stage2OutsideSubnetPrefix" -RouteTable $Site2Stage2OutsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site2Stage2OutsideSubnetPSOut
 
-$Site2Stage2DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage2CRRG" -Location "$Site2" -Name "$Site2Stage2DMZUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site2Stage2DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage2CRRG" -Location "$Site2" -Name "$Site2Stage2DMZUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site2Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site2Stage2CRRG" -Name "$Site2Stage2VNETName"
 $Site2Stage2DMZSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site2Stage2VNETPSOut -Name "$Site2Stage2DMZSubnetName" -AddressPrefix "$Site2Stage2DMZSubnetPrefix" -RouteTable $Site2Stage2DMZUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site2Stage2DMZSubnetPSOut
@@ -281,7 +283,7 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN2CSRGi3onVN1SN3Name" -AddressPrefix "$S
 Add-AzureRmRouteConfig -Name "$routeVN1SN4CSRGi3onVN1SN3Name" -AddressPrefix "$Site2Stage2InsideSubnetPrefix" -RouteTable $Site2Stage2DMZUDRPSOut -NextHopType VirtualAppliance -NextHopIpAddress "$Site2Stage2DMZCSR1IP"
 Set-AzureRmRouteTable -RouteTable $Site2Stage2DMZUDRPSOut
 
-$Site2Stage2InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage2CRRG" -Location "$Site2" -Name "$Site2Stage2InsideUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site2Stage2InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site2Stage2CRRG" -Location "$Site2" -Name "$Site2Stage2InsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site2Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site2Stage2CRRG" -Name "$Site2Stage2VNETName"
 $Site2Stage2InsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site2Stage2VNETPSOut -Name "$Site2Stage2InsideSubnetName" -AddressPrefix "$Site2Stage2InsideSubnetPrefix" -RouteTable $Site2Stage2InsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site2Stage2InsideSubnetPSOut
@@ -290,7 +292,7 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN3CSRGi4onVN1SN4Name" -AddressPrefix "$S
 Add-AzureRmRouteConfig -Name "$routeVN1SN4CSRGi4onVN1SN4Name" -AddressPrefix "$Site2Stage2DMZSubnetPrefix" -RouteTable $Site2Stage2InsideUDRPSOut -NextHopType VirtualAppliance -NextHopIpAddress "$Site2Stage2InsideCSR1IP"
 Set-AzureRmRouteTable -RouteTable $Site2Stage2InsideUDRPSOut
 
-$Site3Stage2MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage2CRRG" -Location "$Site3" -Name "$Site3Stage2MgmtUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site3Stage2MgmtUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage2CRRG" -Location "$Site3" -Name "$Site3Stage2MgmtUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site3Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site3Stage2CRRG" -Name "$Site3Stage2VNETName"
 $Site3Stage2MgmtSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site3Stage2VNETPSOut -Name "$Site3Stage2MgmtSubnetName" -AddressPrefix "$Site3Stage2MgmtSubnetPrefix" -RouteTable $Site3Stage2MgmtUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site3Stage2MgmtSubnetPSOut
@@ -299,12 +301,12 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN3NullonVN1SN1Name" -AddressPrefix "$Sit
 Add-AzureRmRouteConfig -Name "$routeVN1SN4NullonVN1SN1Name" -AddressPrefix "$Site3Stage2InsideSubnetPrefix" -RouteTable $Site3Stage2MgmtUDRPSOut -NextHopType None
 Set-AzureRmRouteTable -RouteTable $Site3Stage2MgmtUDRPSOut
 
-$Site3Stage2OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage2CRRG" -Location "$Site3" -Name "$Site3Stage2OutsideUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site3Stage2OutsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage2CRRG" -Location "$Site3" -Name "$Site3Stage2OutsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site3Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site3Stage2CRRG" -Name "$Site3Stage2VNETName"
 $Site3Stage2OutsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site3Stage2VNETPSOut -Name "$Site3Stage2OutsideSubnetName" -AddressPrefix "$Site3Stage2OutsideSubnetPrefix" -RouteTable $Site3Stage2OutsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site3Stage2OutsideSubnetPSOut
 
-$Site3Stage2DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage2CRRG" -Location "$Site3" -Name "$Site3Stage2DMZUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site3Stage2DMZUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage2CRRG" -Location "$Site3" -Name "$Site3Stage2DMZUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site3Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site3Stage2CRRG" -Name "$Site3Stage2VNETName"
 $Site3Stage2DMZSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site3Stage2VNETPSOut -Name "$Site3Stage2DMZSubnetName" -AddressPrefix "$Site3Stage2DMZSubnetPrefix" -RouteTable $Site3Stage2DMZUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site3Stage2DMZSubnetPSOut
@@ -313,7 +315,7 @@ Add-AzureRmRouteConfig -Name "$routeVN1SN2CSRGi3onVN1SN3Name" -AddressPrefix "$S
 Add-AzureRmRouteConfig -Name "$routeVN1SN4CSRGi3onVN1SN3Name" -AddressPrefix "$Site3Stage2InsideSubnetPrefix" -RouteTable $Site3Stage2DMZUDRPSOut -NextHopType VirtualAppliance -NextHopIpAddress "$Site3Stage2DMZCSR1IP"
 Set-AzureRmRouteTable -RouteTable $Site3Stage2DMZUDRPSOut
 
-$Site3Stage2InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage2CRRG" -Location "$Site3" -Name "$Site3Stage2InsideUDRName" -Tag @{ App="$App";  Stage="$Stage2" }
+$Site3Stage2InsideUDRPSOut = New-AzureRmRouteTable -ResourceGroupName "$Site3Stage2CRRG" -Location "$Site3" -Name "$Site3Stage2InsideUDRName" -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
 $Site3Stage2VNETPSOut = Get-AzureRmVirtualNetwork -ResourceGroupName "$Site3Stage2CRRG" -Name "$Site3Stage2VNETName"
 $Site3Stage2InsideSubnetPSOut = Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $Site3Stage2VNETPSOut -Name "$Site3Stage2InsideSubnetName" -AddressPrefix "$Site3Stage2InsideSubnetPrefix" -RouteTable $Site3Stage2InsideUDRPSOut
 Set-AzureRmVirtualNetwork -VirtualNetwork $Site3Stage2InsideSubnetPSOut

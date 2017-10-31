@@ -1,5 +1,5 @@
 ﻿$App = "aaa"
-$Stage2 = "devqa"
+$Stage1 = "dqa"
 $Stage2 = "prod"
 $Site1 = "westeurope"
 $Site2 = "southeastasia"

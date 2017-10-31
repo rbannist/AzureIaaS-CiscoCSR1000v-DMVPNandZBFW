@@ -1,3 +1,5 @@
+$Org = "RB"
+$Orgcode = "rb"
 $App = "AAA"
 $Appcode = "aaa"
 $Stage1 = "DevQA"
@@ -10,17 +12,19 @@ $Site3 = "eastus"
 $Site1code = "we"
 $Site2code = "sea"
 $Site3code = "eus"
-$sasku1 = "Standard_LRS"
+$SASku1 = "Standard_LRS"
+$DiskSAID1 = "sadisk01"
+$DiagSAID1 = "sadiag01"
 
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site1code-$Appcode-$Stage1code-sdisk-rg01 -Location $Site1 -AccountName rbweaaadqasadisk01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage1" }
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site2code-$Appcode-$Stage1code-sdisk-rg01 -Location $Site2 -AccountName rbseaaaadqasadisk01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage1" }
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site3code-$Appcode-$Stage1code-sdisk-rg01 -Location $Site3 -AccountName rbeusaaadqasadisk01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage1" }
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site1code-$Appcode-$Stage2code-sdisk-rg01 -Location $Site1 -AccountName rbweaaaprodsadisk01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage2" }
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site2code-$Appcode-$Stage2code-sdisk-rg01 -Location $Site2 -AccountName rbseaaaaprodsadisk01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage2" }
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site3code-$Appcode-$Stage2code-sdisk-rg01 -Location $Site3 -AccountName rbeusaaaprodsadisk01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage2" }
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site1code-$Appcode-$Stage1code-sdiag-rg01 -Location $Site1 -AccountName rbweaaadqasadiag01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage1" }
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site2code-$Appcode-$Stage1code-sdiag-rg01 -Location $Site2 -AccountName rbseaaaadqasadiag01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage1" }
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site3code-$Appcode-$Stage1code-sdiag-rg01 -Location $Site3 -AccountName rbeusaaadqasadiag01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage1" }
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site1code-$Appcode-$Stage2code-sdiag-rg01 -Location $Site1 -AccountName rbweaaaprodsadiag01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage2" }
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site2code-$Appcode-$Stage2code-sdiag-rg01 -Location $Site2 -AccountName rbseaaaaprodsadiag01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage2" }
-New-AzureRmStorageAccount -ResourceGroupName rb-$Site3code-$Appcode-$Stage2code-sdiag-rg01 -Location $Site3 -AccountName rbeusaaaprodsadiag01 -SkuName $sasku1 -Tag @{ App="$App";  Stage="$Stage2" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site1code-$Appcode-$Stage1code-sdisk-rg01 -Location $Site1 -AccountName $Orgcode$Site1code$Appcode$Stage1code$DiskSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site2code-$Appcode-$Stage1code-sdisk-rg01 -Location $Site2 -AccountName $Orgcode$Site2code$Appcode$Stage1code$DiskSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site3code-$Appcode-$Stage1code-sdisk-rg01 -Location $Site3 -AccountName $Orgcode$Site3code$Appcode$Stage1code$DiskSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site1code-$Appcode-$Stage2code-sdisk-rg01 -Location $Site1 -AccountName $Orgcode$Site1code$Appcode$Stage2code$DiskSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site2code-$Appcode-$Stage2code-sdisk-rg01 -Location $Site2 -AccountName $Orgcode$Site2code$Appcode$Stage2code$DiskSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site3code-$Appcode-$Stage2code-sdisk-rg01 -Location $Site3 -AccountName $Orgcode$Site3code$Appcode$Stage2code$DiskSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site1code-$Appcode-$Stage1code-sdiag-rg01 -Location $Site1 -AccountName $Orgcode$Site1code$Appcode$Stage1code$DiagSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site2code-$Appcode-$Stage1code-sdiag-rg01 -Location $Site2 -AccountName $Orgcode$Site2code$Appcode$Stage1code$DiagSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site3code-$Appcode-$Stage1code-sdiag-rg01 -Location $Site3 -AccountName $Orgcode$Site3code$Appcode$Stage1code$DiagSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage1" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site1code-$Appcode-$Stage2code-sdiag-rg01 -Location $Site1 -AccountName $Orgcode$Site1code$Appcode$Stage2code$DiagSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site2code-$Appcode-$Stage2code-sdiag-rg01 -Location $Site2 -AccountName $Orgcode$Site2code$Appcode$Stage2code$DiagSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
+New-AzureRmStorageAccount -ResourceGroupName $Orgcode-$Site3code-$Appcode-$Stage2code-sdiag-rg01 -Location $Site3 -AccountName $Orgcode$Site3code$Appcode$Stage2code$DiagSAID1 -SkuName $SASku1 -Tag @{ Org="$Org"; App="$App"; Stage="$Stage2" }
