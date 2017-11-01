@@ -37,9 +37,9 @@ aaa authentication login default local
 aaa authorization exec default local none
 !
 ip vrf PROD
- rd 65200:65200
- route-target export 65200:65200
- route-target import 65200:65200
+ rd 65100:65100
+ route-target export 65100:65100
+ route-target import 65100:65100
 !
 ip multicast-routing vrf PROD distributed
 !
