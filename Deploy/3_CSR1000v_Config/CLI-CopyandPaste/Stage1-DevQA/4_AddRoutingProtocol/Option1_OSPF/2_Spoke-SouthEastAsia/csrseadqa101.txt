@@ -13,24 +13,24 @@ interface Tunnel 200
 interface Tunnel 210
  ip ospf network point-to-point
 !
-ip access-list standard STATIC_PROD-to-OSPF65200
- permit 172.16.0.0 0.0.0.255
-!
-ip access-list standard CONNECTED_PROD-to-OSPF65200
+ip access-list standard STATIC_PROD-to-OSPF65100
  deny any
 !
-route-map STATIC_PROD-to-OSPF65200 permit 10
- match ip address STATIC_PROD-to-OSPF65200
+ip access-list standard CONNECTED_PROD-to-OSPF65100
+ deny any
 !
-route-map CONNECTED_PROD-to-OSPF65200 permit 10
- match ip address CONNECTED_PROD-to-OSPF65200
+route-map STATIC_PROD-to-OSPF65100 permit 10
+ match ip address STATIC_PROD-to-OSPF65100
 !
-router ospf 65200 vrf PROD
+route-map CONNECTED_PROD-to-OSPF65100 permit 10
+ match ip address CONNECTED_PROD-to-OSPF65100
+!
+router ospf 65100 vrf PROD
  log-adjacency-changes
  capability vrf-lite
  router-id 172.16.161.101
- redistribute static metric 10 metric-type 1 subnets route-map STATIC_PROD-to-OSPF65200
- redistribute connected metric 10 metric-type 1 subnets route-map CONNECTED_PROD-to-OSPF65200
+ redistribute static metric 10 metric-type 1 subnets route-map STATIC_PROD-to-OSPF65100
+ redistribute connected metric 10 metric-type 1 subnets route-map CONNECTED_PROD-to-OSPF65100
  passive-interface default
  no passive-interface Tunnel200
  no passive-interface Tunnel210
@@ -39,6 +39,4 @@ router ospf 65200 vrf PROD
  network 172.16.0.0 0.0.0.255 area 1
  network 192.168.16.0 0.0.15.255 area 1
  bfd all-interfaces
-!
-ip route vrf PROD 172.16.0.0 255.255.255.0 Null0
 !

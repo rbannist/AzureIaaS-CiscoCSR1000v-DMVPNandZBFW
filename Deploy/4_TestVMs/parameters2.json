@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "virtualMachineName": {
+            "value": "rb-we-aaa-dqa-tstvm01"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_B1ms"
+        },
+        "adminUsername": {
+            "value": "rbadmin"
+        },
+        "virtualNetworkName": {
+            "value": "rb-we-aaa-dqa-vn01"
+        },
+        "networkInterfaceName": {
+            "value": "rb-we-aaa-dqa-tstvm01-nic01"
+        },
+        "adminPassword": {
+            "value": "M1cr0s0ft123"
+        },
+        "storageAccountName": {
+            "value": "rbweaaadqasadisk001"
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "rbweaaadqasadiag001"
+        },
+        "subnetName": {
+            "value": "rb-we-aaa-dqa-vn01-sn04"
+        }
+    }
+}

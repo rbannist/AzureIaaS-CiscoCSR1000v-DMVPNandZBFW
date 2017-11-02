@@ -14,7 +14,7 @@ interface Tunnel 210
  ip ospf network point-to-point
 !
 ip access-list standard STATIC_PROD-to-OSPF65200
- permit 172.16.0.0 0.0.0.255
+ deny any
 !
 ip access-list standard CONNECTED_PROD-to-OSPF65200
  deny any
@@ -39,6 +39,4 @@ router ospf 65200 vrf PROD
  network 172.16.150.0 0.0.0.3 area 0
  network 172.16.10.0 0.0.0.255 area 1
  bfd all-interfaces
-!
-ip route vrf PROD 172.16.0.0 255.255.255.0 Null0
 !
