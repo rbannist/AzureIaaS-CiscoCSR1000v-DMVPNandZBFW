@@ -17,9 +17,6 @@
       "serviceStage1Code": {
         "value": "dqa"
       },
-      "serviceStage2Code": {
-        "value": "prod"
-      },
       "location1Name": {
         "value": "westeurope"
       },
