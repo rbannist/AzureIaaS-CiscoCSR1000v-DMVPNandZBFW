@@ -21,13 +21,13 @@
             }
         },
         "serviceStage": {
-            "type": "securestring",
+            "type": "string",
             "metadata": {
                 "description": "Service stage that this infrastructure is underpinning."
             }
         },
         "commonResourcesResourceGroupName": {
-            "type": "securestring",
+            "type": "string",
             "metadata": {
                 "description": "Name of the Resource Group that hosts common resources used by CSR 1000v VMs."
             }
