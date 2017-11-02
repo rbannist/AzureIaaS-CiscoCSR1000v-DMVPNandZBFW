@@ -1,0 +1,66 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "orgCode": {
+        "value": "rb"
+      },
+      "adminUsername": {
+        "value": "rbadmin"
+      },
+      "adminPassword": {
+        "value": "M1cr0s0ft123"
+      },
+      "serviceCode": {
+        "value": "aaa"
+      },
+      "serviceStage1Code": {
+        "value": "dqa"
+      },
+      "serviceStage2Code": {
+        "value": "prod"
+      },
+      "location1Name": {
+        "value": "westeurope"
+      },
+      "location1Code": {
+        "value": "we"
+      },
+      "vm15Suffix": {
+        "value": "tst1"
+      },
+      "vmSuffix": {
+        "value": "tstvm01"
+      },
+      "vmSize": {
+        "value": "Standard_B1ms"
+      },
+      "diskStorageAccountSuffix": {
+        "value": "sadisk001"
+      },
+      "diskStorageAccountResourceGroupSuffix": {
+        "value": "sdisk-rg01"
+      },
+      "diagStorageAccountSuffix": {
+        "value": "sadiag001"
+      },
+      "diagStorageAccountResourceGroupSuffix": {
+        "value": "sdiag-rg01"
+      },
+      "vnetSuffix": {
+        "value": "vn01"
+      },
+      "commonResourcesResourceGroupSuffix": {
+        "value": "csrcr-rg01"
+      },
+      "subnet3Suffix": {
+        "value": "sn03"
+      },
+      "subnet4Suffix": {
+        "value": "sn04"
+      },
+      "nic1Suffix": {
+        "value": "nic-01"
+      }
+    }
+  }
