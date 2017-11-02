@@ -9,10 +9,10 @@
         "value": "rb"
       },
       "adminUsername": {
-        "value": "rbadmin"
+        "value": "ghuser"
       },
       "adminPassword": {
-        "value": "M1cr0s0ft123"
+        "value": "GEN-PASSWORD"
       },
       "serviceName": {
         "value": "AAA"
@@ -41,7 +41,7 @@
       "location2Name": {
         "value": "southeastasia"
       },
-      "location2Code": {
+      "location1Code": {
         "value": "sea"
       },
       "location3Name": {
@@ -105,7 +105,7 @@
         "value": "csrcr-rg01"
       },
       "subnet3Name": {
-        "value": "rb-we-aaa-dqa-vn01-sn04"
+        "value": "rb-we-aaa-dqa-vn01-sn03"
       },
       "subnet3Suffix": {
         "value": "sn03"
@@ -120,7 +120,7 @@
         "value": "rb-we-aaa-dqa-tstvm01-nic01"
       },
       "nic1Suffix": {
-        "value": "nic01"
+        "value": "nic-01"
       }
     }
   }
