@@ -1,4 +1,0 @@
-azure config mode arm
-az login
-az account set --subscription ''
-https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-samples-cli-deploy
