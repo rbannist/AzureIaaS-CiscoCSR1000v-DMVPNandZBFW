@@ -2,6 +2,12 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "orgName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the organisation."
+            }
+        },
         "orgCode": {
             "type": "string",
             "metadata": {
@@ -18,6 +24,12 @@
             "type": "securestring",
             "metadata": {
                 "description": "Password for the Virtual Machine."
+            }
+        },
+        "serviceName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name or ID of the top-level service that this infrastructure is underpinning."
             }
         },
         "serviceCode": {
@@ -38,10 +50,52 @@
                 "description": "Azure Region 1 shortcode."
             }
         },
-        "serviceStage1Code": {
-            "type": "securestring",
+        "location2Name": {
+            "type": "string",
             "metadata": {
-                "description": "Service stage 1 that this infrastructure is underpinning."
+                "description": "Azure Region 1 name."
+            }
+        },
+        "location2Code": {
+            "type": "string",
+            "metadata": {
+                "description": "Azure Region 1 shortcode."
+            }
+        },
+        "location3Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Azure Region 1 name."
+            }
+        },
+        "location3Code": {
+            "type": "string",
+            "metadata": {
+                "description": "Azure Region 1 shortcode."
+            }
+        },
+        "serviceStage1Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Service stage 1 name."
+            }
+        },
+        "serviceStage1Code": {
+            "type": "string",
+            "metadata": {
+                "description": "Shortcode for service stage 1."
+            }
+        },
+        "serviceStage2Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Service stage 1 name."
+            }
+        },
+        "serviceStage2Code": {
+            "type": "string",
+            "metadata": {
+                "description": "Shortcode for service stage 1."
             }
         },
         "vm15Suffix": {
@@ -122,26 +176,39 @@
         "imageOffer": "UbuntuServer",
         "imageSKU": "16.04-LTS",
         "imageVersion": "latest",
-        "vmName": "[parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vmSuffix'))]",
+        "vmName": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vmSuffix'))]",
+        "vm15Name": "[concat(parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('vm15Suffix'))]",
+        "diskStorageAccountName": "[concat(parameters('orgCode'), parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('diskStorageAccountSuffix'))]",
+        "diagStorageAccountName": "[concat(parameters('orgCode'), parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('diagStorageAccountSuffix'))]",
         "diskStorageAccountResourceId": "[resourceId(concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('diskStorageAccountResourceGroupSuffix')), 'Microsoft.Storage/storageAccounts', concat(parameters('orgCode'), parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('diskStorageAccountSuffix')))",
         "diagStorageAccountResourceId": "[resourceId(concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('diagStorageAccountResourceGroupSuffix')), 'Microsoft.Storage/storageAccounts', concat(parameters('orgCode'), parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('diagStorageAccountSuffix')))",
         "osDiskName": "[concat(variables('vmName'), '-osdisk')]",
-        "subnet3ResourceId": "[resourceId(concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('commonResourcesResourceGroupSuffix')), 'Microsoft.Network/virtualNetworks/subnets', concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vnetSuffix'), '-', parameters('subnet3Suffix')))]",
-        "subnet4ResourceId": "[resourceId(concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('commonResourcesResourceGroupSuffix')), 'Microsoft.Network/virtualNetworks/subnets', concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vnetSuffix'), '-', parameters('subnet4Suffix')))]",
-        "nic1Name": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vmSuffix'), '-', parameters('nic1Suffix'))]"
+        "commonResourcesResourceGroupName": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('commonResourcesResourceGroupSuffix'))]",
+        "vnetName": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vnetSuffix'))]",        
+        "subnet3Name": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vnetSuffix'), '-', parameters('subnet3Suffix'))]",
+        "subnet4Name": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vnetSuffix'), '-', parameters('subnet4Suffix'))]",
+        "subnet3ResourceId": "[resourceId(variables('commonResourcesResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), variables('subnet3Name'))]",
+        "subnet4ResourceId": "[resourceId(variables('commonResourcesResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), variables('subnet4Name'))]",
+        "nic1Name": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vmSuffix'), '-', parameters('nic1Suffix'))]",
+        "nic1ResourceID": "[resourceId('Microsoft.Network/networkInterfaces', variables('nic1Name'))]"
     },
     "resources": [
         {
-            "name": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vmSuffix'))]",
+            "name": "[variables('vmName')]",
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2016-04-30-preview",
             "location": "[parameters('location1Name')]",
             "dependsOn": [
-                "[concat('Microsoft.Network/networkInterfaces/', parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vmSuffix'), '-', parameters('nic1Suffix'))]"
+                "[concat('Microsoft.Network/networkInterfaces/', variables('nic1Name'))]"
             ],
+            "tags": {
+                "Org": "[parameters('orgName')]",
+                "App": "[parameters('serviceName')]",
+                "Stage": "[parameters('serviceStage1Name')]"
+            },
             "properties": {
                 "osProfile": {
-                    "computerName": "[concat(parameters('orgCode'), parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('vm15Suffix'))]",
+                    "computerName": "[variables('vmName')]",
                     "adminUsername": "[parameters('adminUsername')]",
                     "adminPassword": "[parameters('adminPassword')]"
                 },
@@ -158,7 +225,7 @@
                     "osDisk": {
                         "createOption": "FromImage",
                         "vhd": {
-                            "uri": "[concat('https://', concat(parameters('orgCode'), parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('diskStorageAccountSuffix')), '.blob.core.windows.net/vhds/', variables('osDiskName'), '.vhd')]"
+                            "uri": "[concat('https://', variables('diskStorageAccountName'), '.blob.core.windows.net/vhds/', variables('osDiskName'), '.vhd')]"
                         },
                         "name": "[variables('vmName')]"
                     },
@@ -167,14 +234,14 @@
                 "networkProfile": {
                     "networkInterfaces": [
                         {
-                            "id": "[resourceId('Microsoft.Network/networkInterfaces', variables('nic1Name'))]"
+                            "id": "[variables('nic1ResourceId'))]"
                         }
                     ]
                 },
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
                         "enabled": true,
-                        "storageUri": "[concat('https://', concat(parameters('orgCode'), parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('diagStorageAccountSuffix')), '.blob.core.windows.net')]"
+                        "storageUri": "[concat('https://', variables('diagStorageAccountName'), '.blob.core.windows.net')]"
                     }
                 }
             }
@@ -185,6 +252,11 @@
             "apiVersion": "2016-09-01",
             "location": "[parameters('location1Name')]",
             "dependsOn": [],
+            "tags": {
+                "Org": "[parameters('orgName')]",
+                "App": "[parameters('serviceName')]",
+                "Stage": "[parameters('serviceStage1Name')]"
+            },
             "properties": {
                 "ipConfigurations": [
                     {

@@ -2,14 +2,89 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+      "orgName": {
+        "value": "RB"
+      },
+      "orgCode": {
+        "value": "rb"
+      },
       "adminUsername": {
-        "value": "ghuser"
+        "value": "rbadmin"
       },
       "adminPassword": {
-        "value": "GEN-PASSWORD"
+        "value": "M1cr0s0ft123"
       },
-      "dnsLabelPrefix": {
-        "value": "GEN-UNIQUE"
+      "serviceName": {
+        "value": "AAA"
+      },
+      "serviceCode": {
+        "value": "aaa"
+      },
+      "serviceStage1Name": {
+        "value": "DevQA"
+      },
+      "serviceStage1Code": {
+        "value": "dqa"
+      },
+      "serviceStage2Name": {
+        "value": "Prod"
+      },
+      "serviceStage2Code": {
+        "value": "prod"
+      },
+      "location1Name": {
+        "value": "westeurope"
+      },
+      "location1Code": {
+        "value": "we"
+      },
+      "location2Name": {
+        "value": "southeastasia"
+      },
+      "location2Code": {
+        "value": "sea"
+      },
+      "location3Name": {
+        "value": "eastus"
+      },
+      "location3Code": {
+        "value": "eus"
+      },
+      "vm15Suffix": {
+        "value": "tst1"
+      },
+      "vmSuffix": {
+        "value": "tstvm01"
+      },
+      "vmSize": {
+        "value": "Standard_A1_v2"
+      },
+      "diskStorageAccountSuffix": {
+        "value": "sadisk01"
+      },
+      "diskStorageAccountResourceGroupSuffix": {
+        "value": "sdisk-rg01"
+      },
+      "diagStorageAccountSuffix": {
+        "value": "sadiag01"
+      },
+      "diagStorageAccountResourceGroupSuffix": {
+        "value": "sdiag-rg01"
+      },
+      "vnetSuffix": {
+        "value": "vn01"
+      },
+      "commonResourcesResourceGroupSuffix": {
+        "value": "csrcr-rg01"
+      },
+      "subnet3Suffix": {
+        "value": "sn03"
+      },
+      "subnet4Suffix": {
+        "value": "sn04"
+      },
+      "nic1Suffix": {
+        "value": "nic01"
       }
     }
   }

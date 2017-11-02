@@ -396,7 +396,7 @@ interface GigabitEthernet4
  no shutdown
 !
 ip nat inside source list PAT-PROD-toOUTSIDEGi2 interface GigabitEthernet2 vrf PROD overload extended
-ip nat inside source static tcp 192.168.131.6 22 192.168.129.5 2022 vrf PROD extendable
+ip nat inside source static tcp 192.168.131.10 22 192.168.129.5 2022 vrf PROD extendable
 ip nat inside source list PAT-MGMT-toMGMTGi1 interface GigabitEthernet1 overload extended
 !
 ip route vrf PROD 0.0.0.0 0.0.0.0 192.168.129.1

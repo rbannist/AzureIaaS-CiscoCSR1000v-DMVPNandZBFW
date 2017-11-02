@@ -11,8 +11,14 @@
       "adminPassword": {
         "value": "M1cr0s0ft123"
       },
+      "serviceName": {
+        "value": "AAA"
+      },
       "serviceCode": {
         "value": "aaa"
+      },
+      "serviceStage1Name": {
+        "value": "DevQA"
       },
       "serviceStage1Code": {
         "value": "dqa"
@@ -33,13 +39,13 @@
         "value": "Standard_B1ms"
       },
       "diskStorageAccountSuffix": {
-        "value": "sadisk001"
+        "value": "sadisk01"
       },
       "diskStorageAccountResourceGroupSuffix": {
         "value": "sdisk-rg01"
       },
       "diagStorageAccountSuffix": {
-        "value": "sadiag001"
+        "value": "sadiag01"
       },
       "diagStorageAccountResourceGroupSuffix": {
         "value": "sdiag-rg01"
