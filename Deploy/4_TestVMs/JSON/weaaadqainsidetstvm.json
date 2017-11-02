@@ -263,9 +263,9 @@
                         "name": "ipconfig1",
                         "properties": {
                             "subnet": {
-                                "id": "[variables('subnet3ResourceId')]"
+                                "id": "[variables('subnet4ResourceId')]"
                             },
-                            "privateIPAddress": "[string(take(split(replace(reference(variables('subnet3ResourceId'), providers('Microsoft.Network', 'virtualNetworks').apiVersions[0]).addressPrefix, '0/', '10/'), '/'), 1)[0])]",
+                            "privateIPAddress": "[string(take(split(replace(reference(variables('subnet4ResourceId'), providers('Microsoft.Network', 'virtualNetworks').apiVersions[0]).addressPrefix, '0/', '10/'), '/'), 1)[0])]",
                             "privateIPAllocationMethod": "Static",
                             "privateIPAddressVersion": "IPv4"
                         }
