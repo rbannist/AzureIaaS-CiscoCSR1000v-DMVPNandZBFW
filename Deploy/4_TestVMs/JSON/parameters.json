@@ -50,11 +50,17 @@
       "location3Code": {
         "value": "eus"
       },
-      "vm15Suffix": {
+      "vm1Suffix15": {
         "value": "tst1"
       },
-      "vmSuffix": {
+      "vm1Suffix": {
         "value": "tstvm01"
+      },
+      "vm2Suffix15": {
+        "value": "tst2"
+      },
+      "vm2Suffix": {
+        "value": "tstvm02"
       },
       "vmSize": {
         "value": "Standard_A1_v2"

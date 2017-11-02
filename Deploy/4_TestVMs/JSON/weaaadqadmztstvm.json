@@ -98,16 +98,28 @@
                 "description": "Shortcode for service stage 1."
             }
         },
-        "vm15Suffix": {
+        "vm1Suffix15": {
             "type": "string",
             "metadata": {
-                "description": "The suffix to use when doing a concat to keep the VM name within 15 characters."
+                "description": "The suffix to use when doing a concat to keep the VM1 name within 15 characters."
             }
         },
-        "vmSuffix": {
+        "vm1Suffix": {
             "type": "string",
             "metadata": {
-                "description": "The suffix to append when doing a concat for the VM's name."
+                "description": "The suffix to append when doing a concat for the VM1's name."
+            }
+        },
+        "vm2Suffix15": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to use when doing a concat to keep the VM2 name within 15 characters."
+            }
+        },
+        "vm2Suffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for the VM2's name."
             }
         },
         "vmSize": {
@@ -176,25 +188,25 @@
         "imageOffer": "UbuntuServer",
         "imageSKU": "16.04-LTS",
         "imageVersion": "latest",
-        "vmName": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vmSuffix'))]",
-        "vm15Name": "[concat(parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('vm15Suffix'))]",
+        "vm1Name": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vm1Suffix'))]",
+        "vm1Name15": "[concat(parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('vm1Suffix15'))]",
         "diskStorageAccountName": "[concat(parameters('orgCode'), parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('diskStorageAccountSuffix'))]",
         "diagStorageAccountName": "[concat(parameters('orgCode'), parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('diagStorageAccountSuffix'))]",
         "diskStorageAccountResourceId": "[resourceId(concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('diskStorageAccountResourceGroupSuffix')), 'Microsoft.Storage/storageAccounts', concat(parameters('orgCode'), parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('diskStorageAccountSuffix')))",
         "diagStorageAccountResourceId": "[resourceId(concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('diagStorageAccountResourceGroupSuffix')), 'Microsoft.Storage/storageAccounts', concat(parameters('orgCode'), parameters('location1Code'), parameters('serviceCode'), parameters('serviceStage1Code'), parameters('diagStorageAccountSuffix')))",
-        "osDiskName": "[concat(variables('vmName'), '-osdisk')]",
+        "osDiskName": "[concat(variables('vm1Name'), '-osdisk')]",
         "commonResourcesResourceGroupName": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('commonResourcesResourceGroupSuffix'))]",
         "vnetName": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vnetSuffix'))]",        
         "subnet3Name": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vnetSuffix'), '-', parameters('subnet3Suffix'))]",
         "subnet4Name": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vnetSuffix'), '-', parameters('subnet4Suffix'))]",
         "subnet3ResourceId": "[resourceId(variables('commonResourcesResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), variables('subnet3Name'))]",
         "subnet4ResourceId": "[resourceId(variables('commonResourcesResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), variables('subnet4Name'))]",
-        "nic1Name": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vmSuffix'), '-', parameters('nic1Suffix'))]",
+        "nic1Name": "[concat(parameters('orgCode'), '-', parameters('location1Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage1Code'), '-', parameters('vm1Suffix'), '-', parameters('nic1Suffix'))]",
         "nic1ResourceID": "[resourceId('Microsoft.Network/networkInterfaces', variables('nic1Name'))]"
     },
     "resources": [
         {
-            "name": "[variables('vmName')]",
+            "name": "[variables('vm1Name')]",
             "type": "Microsoft.Compute/virtualMachines",
             "apiVersion": "2016-04-30-preview",
             "location": "[parameters('location1Name')]",
@@ -208,7 +220,7 @@
             },
             "properties": {
                 "osProfile": {
-                    "computerName": "[variables('vmName')]",
+                    "computerName": "[variables('vm1Name')]",
                     "adminUsername": "[parameters('adminUsername')]",
                     "adminPassword": "[parameters('adminPassword')]"
                 },
@@ -227,7 +239,7 @@
                         "vhd": {
                             "uri": "[concat('https://', variables('diskStorageAccountName'), '.blob.core.windows.net/vhds/', variables('osDiskName'), '.vhd')]"
                         },
-                        "name": "[variables('vmName')]"
+                        "name": "[variables('vm1Name')]"
                     },
                     "dataDisks": []
                 },
