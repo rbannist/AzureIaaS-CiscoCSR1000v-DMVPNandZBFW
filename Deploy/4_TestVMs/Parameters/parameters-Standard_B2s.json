@@ -1,0 +1,96 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "orgName": {
+        "value": "RB"
+      },
+      "orgCode": {
+        "value": "rb"
+      },
+      "adminUsername": {
+        "value": "rbadmin"
+      },
+      "adminPassword": {
+        "value": "M1cr0s0ft123"
+      },
+      "serviceName": {
+        "value": "AAA"
+      },
+      "serviceCode": {
+        "value": "aaa"
+      },
+      "serviceStage1Name": {
+        "value": "DevQA"
+      },
+      "serviceStage1Code": {
+        "value": "dqa"
+      },
+      "serviceStage2Name": {
+        "value": "Prod"
+      },
+      "serviceStage2Code": {
+        "value": "prod"
+      },
+      "location1Name": {
+        "value": "westeurope"
+      },
+      "location1Code": {
+        "value": "we"
+      },
+      "location2Name": {
+        "value": "southeastasia"
+      },
+      "location2Code": {
+        "value": "sea"
+      },
+      "location3Name": {
+        "value": "eastus"
+      },
+      "location3Code": {
+        "value": "eus"
+      },
+      "vm1Suffix15": {
+        "value": "tst1"
+      },
+      "vm1Suffix": {
+        "value": "tstvm01"
+      },
+      "vm2Suffix15": {
+        "value": "tst2"
+      },
+      "vm2Suffix": {
+        "value": "tstvm02"
+      },
+      "vmSize": {
+        "value": "Standard_B2s"
+      },
+      "diskStorageAccountSuffix": {
+        "value": "sadisk01"
+      },
+      "diskStorageAccountResourceGroupSuffix": {
+        "value": "sdisk-rg01"
+      },
+      "diagStorageAccountSuffix": {
+        "value": "sadiag01"
+      },
+      "diagStorageAccountResourceGroupSuffix": {
+        "value": "sdiag-rg01"
+      },
+      "vnetSuffix": {
+        "value": "vn01"
+      },
+      "commonResourcesResourceGroupSuffix": {
+        "value": "csrcr-rg01"
+      },
+      "subnet3Suffix": {
+        "value": "sn03"
+      },
+      "subnet4Suffix": {
+        "value": "sn04"
+      },
+      "nic1Suffix": {
+        "value": "nic01"
+      }
+    }
+  }
