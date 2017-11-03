@@ -1,0 +1,289 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "orgName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the organisation."
+            }
+        },
+        "orgCode": {
+            "type": "string",
+            "metadata": {
+                "description": "Short code for the name of the organisation."
+            }
+        },
+        "adminUsername": {
+            "type": "string",
+            "metadata": {
+                "description": "Username for the Virtual Machine."
+            }
+        },
+        "adminPassword": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Password for the Virtual Machine."
+            }
+        },
+        "serviceName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name or ID of the top-level service that this infrastructure is underpinning."
+            }
+        },
+        "serviceCode": {
+            "type": "string",
+            "metadata": {
+                "description": "Short code for the name of the top-level service that this infrastructure is underpinning."
+            }
+        },
+        "location1Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Azure Region 1 name."
+            }
+        },
+        "location1Code": {
+            "type": "string",
+            "metadata": {
+                "description": "Azure Region 1 shortcode."
+            }
+        },
+        "location2Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Azure Region 1 name."
+            }
+        },
+        "location2Code": {
+            "type": "string",
+            "metadata": {
+                "description": "Azure Region 1 shortcode."
+            }
+        },
+        "location3Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Azure Region 1 name."
+            }
+        },
+        "location3Code": {
+            "type": "string",
+            "metadata": {
+                "description": "Azure Region 1 shortcode."
+            }
+        },
+        "serviceStage1Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Service stage 1 name."
+            }
+        },
+        "serviceStage1Code": {
+            "type": "string",
+            "metadata": {
+                "description": "Shortcode for service stage 1."
+            }
+        },
+        "serviceStage2Name": {
+            "type": "string",
+            "metadata": {
+                "description": "Service stage 1 name."
+            }
+        },
+        "serviceStage2Code": {
+            "type": "string",
+            "metadata": {
+                "description": "Shortcode for service stage 1."
+            }
+        },
+        "vm1Suffix15": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to use when doing a concat to keep the VM name within 15 characters."
+            }
+        },
+        "vm1Suffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for the VM1's name."
+            }
+        },
+        "vm2Suffix15": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to use when doing a concat to keep the VM2 name within 15 characters."
+            }
+        },
+        "vm2Suffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for the VM2's name."
+            }
+        },
+        "vmSize": {
+            "type": "string",
+            "metadata": {
+                "description": "Size of VM.  Please make sure that the SKU is available in the Azure Region being deployed to"
+            }
+        },
+        "diskStorageAccountSuffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for the VM's disk storage account name."
+            }
+        },
+        "diskStorageAccountResourceGroupSuffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for the VM's disk storage account's resource group name."
+            }
+        },
+        "diagStorageAccountSuffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for the VM's diagnostics storage account name."
+            }
+        },
+        "diagStorageAccountResourceGroupSuffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for the VM's diagnostics storage account's resource group name."
+            }
+        },
+        "vnetSuffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for the VNet's name."
+            }
+        },
+        "commonResourcesResourceGroupSuffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for the common resources resource group's name."
+            }
+        },
+        "subnet3Suffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for Subnet 3's name."
+            }
+        },
+        "subnet4Suffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for Subnet 4's name."
+            }
+        },
+        "nic1Suffix": {
+            "type": "string",
+            "metadata": {
+                "description": "The suffix to append when doing a concat for the first NIC's name."
+            }
+        }
+    },
+    "variables": {
+        "imagePublisher": "Canonical",
+        "imageOffer": "UbuntuServer",
+        "imageSKU": "16.04-LTS",
+        "imageVersion": "latest",
+        "vm1Name": "[concat(parameters('orgCode'), '-', parameters('location2Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage2Code'), '-', parameters('vm1Suffix'))]",
+        "vm1Name15": "[concat(parameters('location2Code'), parameters('serviceCode'), parameters('serviceStage2Code'), parameters('vm1Suffix15'))]",
+        "diskStorageAccountName": "[concat(parameters('orgCode'), parameters('location2Code'), parameters('serviceCode'), parameters('serviceStage2Code'), parameters('diskStorageAccountSuffix'))]",
+        "diagStorageAccountName": "[concat(parameters('orgCode'), parameters('location2Code'), parameters('serviceCode'), parameters('serviceStage2Code'), parameters('diagStorageAccountSuffix'))]",
+        "diskStorageAccountResourceId": "[resourceId(concat(parameters('orgCode'), '-', parameters('location2Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage2Code'), '-', parameters('diskStorageAccountResourceGroupSuffix')), 'Microsoft.Storage/storageAccounts', concat(parameters('orgCode'), parameters('location2Code'), parameters('serviceCode'), parameters('serviceStage2Code'), parameters('diskStorageAccountSuffix')))",
+        "diagStorageAccountResourceId": "[resourceId(concat(parameters('orgCode'), '-', parameters('location2Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage2Code'), '-', parameters('diagStorageAccountResourceGroupSuffix')), 'Microsoft.Storage/storageAccounts', concat(parameters('orgCode'), parameters('location2Code'), parameters('serviceCode'), parameters('serviceStage2Code'), parameters('diagStorageAccountSuffix')))",
+        "osDiskName": "[concat(variables('vm1Name'), '-osdisk')]",
+        "commonResourcesResourceGroupName": "[concat(parameters('orgCode'), '-', parameters('location2Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage2Code'), '-', parameters('commonResourcesResourceGroupSuffix'))]",
+        "vnetName": "[concat(parameters('orgCode'), '-', parameters('location2Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage2Code'), '-', parameters('vnetSuffix'))]",        
+        "subnet3Name": "[concat(parameters('orgCode'), '-', parameters('location2Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage2Code'), '-', parameters('vnetSuffix'), '-', parameters('subnet3Suffix'))]",
+        "subnet4Name": "[concat(parameters('orgCode'), '-', parameters('location2Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage2Code'), '-', parameters('vnetSuffix'), '-', parameters('subnet4Suffix'))]",
+        "subnet3ResourceId": "[resourceId(variables('commonResourcesResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), variables('subnet3Name'))]",
+        "subnet4ResourceId": "[resourceId(variables('commonResourcesResourceGroupName'), 'Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), variables('subnet4Name'))]",
+        "nic1Name": "[concat(parameters('orgCode'), '-', parameters('location2Code'), '-', parameters('serviceCode'), '-', parameters('serviceStage2Code'), '-', parameters('vm1Suffix'), '-', parameters('nic1Suffix'))]",
+        "nic1ResourceID": "[resourceId('Microsoft.Network/networkInterfaces', variables('nic1Name'))]"
+    },
+    "resources": [
+        {
+            "name": "[variables('vm1Name')]",
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2016-04-30-preview",
+            "location": "[parameters('location2Name')]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/networkInterfaces/', variables('nic1Name'))]"
+            ],
+            "tags": {
+                "Org": "[parameters('orgName')]",
+                "App": "[parameters('serviceName')]",
+                "Stage": "[parameters('serviceStage2Name')]"
+            },
+            "properties": {
+                "osProfile": {
+                    "computerName": "[variables('vm1Name')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]"
+                },
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "[variables('imagePublisher')]",
+                        "offer": "[variables('imageOffer')]",
+                        "sku": "[variables('imageSku')]",
+                        "version": "[variables('imageVersion')]"
+                    },
+                    "osDisk": {
+                        "createOption": "FromImage",
+                        "vhd": {
+                            "uri": "[concat('https://', variables('diskStorageAccountName'), '.blob.core.windows.net/vhds/', variables('osDiskName'), '.vhd')]"
+                        },
+                        "name": "[variables('vm1Name')]"
+                    },
+                    "dataDisks": []
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[variables('nic1ResourceId')]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[concat('https://', variables('diagStorageAccountName'), '.blob.core.windows.net')]"
+                    }
+                }
+            }
+        },
+        {
+            "name": "[variables('nic1Name')]",
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "2016-09-01",
+            "location": "[parameters('location2Name')]",
+            "dependsOn": [],
+            "tags": {
+                "Org": "[parameters('orgName')]",
+                "App": "[parameters('serviceName')]",
+                "Stage": "[parameters('serviceStage2Name')]"
+            },
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "subnet": {
+                                "id": "[variables('subnet3ResourceId')]"
+                            },
+                            "privateIPAddress": "[string(take(split(replace(reference(variables('subnet3ResourceId'), providers('Microsoft.Network', 'virtualNetworks').apiVersions[0]).addressPrefix, '0/', '10/'), '/'), 1)[0])]",
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddressVersion": "IPv4"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
