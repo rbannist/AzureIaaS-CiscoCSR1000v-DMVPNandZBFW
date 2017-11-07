@@ -92,7 +92,7 @@ ip access-list standard PAT-PROD-toOUTSIDEGi2
  deny   192.168.131.3
  deny   192.168.131.4
  deny   192.168.131.5
- permit 172.16.161.201 255.255.255.255
+ permit 172.16.161.201
  permit 192.168.130.0 0.0.0.255
  permit 192.168.131.0 0.0.0.255
  deny   any
@@ -177,38 +177,73 @@ policy-map type inspect OUTSIDE-to-DMZ
  class type inspect any-filetransfer
   drop
  class type inspect any-web
-  pass
+  inspect
  class type inspect any-ssh
-  pass
+  inspect
  class type inspect any-ntp
-  pass
+  inspect
  class type inspect any-acl-OUTSIDE-DMZ
-  pass
+  inspect
  class class-default
   drop log
 policy-map type inspect DMZ-to-OUTSIDE
+ class type inspect any-icmp
+  inspect
+ class type inspect any-tcp
+  inspect
+ class type inspect any-udp
+  inspect
  class class-default
   pass
-policy-map type inspect OUTSIDE-to-TUNNEL
- class type inspect any-ntp
-  pass
- class type inspect any-acl-OUTSIDE-TUNNEL
-  pass
- class class-default
-  drop log
 policy-map type inspect TUNNEL-to-INSIDE
+ class type inspect any-icmp
+  inspect
+ class type inspect any-tcp
+  inspect
+ class type inspect any-udp
+  inspect
  class class-default
   pass
 policy-map type inspect TUNNEL-to-SELF
+ class type inspect any-icmp
+  inspect
+ class type inspect any-tcp
+  inspect
+ class type inspect any-udp
+  inspect
  class class-default
   pass
 policy-map type inspect DMZ-to-TUNNEL
+ class type inspect any-filetransfer
+  drop
+ class type inspect any-web
+  inspect
+ class type inspect any-ssh
+  inspect SSH-MAXSESSION-5
+ class type inspect any-dns
+  inspect
+ class type inspect any-icmp
+  inspect
+ class type inspect any-ntp
+  inspect
  class class-default
-  pass
+  drop log
 policy-map type inspect SELF-to-OUTSIDE
+ class type inspect any-icmp
+  inspect
+ class type inspect any-tcp
+  inspect
+ class type inspect any-udp
+  inspect
  class class-default
   pass
 policy-map type inspect SELF-to-INSIDE
+ class type inspect any-icmp
+  inspect
+ class type inspect any-tcp
+  inspect
+ class type inspect any-udp
+  inspect
  class class-default
   pass
 policy-map type inspect DMZ-to-INSIDE
@@ -219,17 +254,36 @@ policy-map type inspect DMZ-to-INSIDE
  class type inspect any-ssh
   inspect SSH-MAXSESSION-5
  class type inspect any-dns
-  pass
+  inspect
  class type inspect any-icmp
-  pass
+  inspect
  class type inspect any-ntp
-  pass
+  inspect
  class class-default
   drop log
 policy-map type inspect INSIDE-to-SELF
+ class type inspect any-icmp
+  inspect
+ class type inspect any-tcp
+  inspect
+ class type inspect any-udp
+  inspect
  class class-default
   pass
+policy-map type inspect OUTSIDE-to-TUNNEL
+ class type inspect any-ntp
+  inspect
+ class type inspect any-acl-OUTSIDE-TUNNEL
+  inspect
+ class class-default
+  drop log
 policy-map type inspect INSIDE-to-TUNNEL
+ class type inspect any-icmp
+  inspect
+ class type inspect any-tcp
+  inspect
+ class type inspect any-udp
+  inspect
  class class-default
   pass
 policy-map type inspect OUTSIDE-to-INSIDE
@@ -238,42 +292,60 @@ policy-map type inspect OUTSIDE-to-INSIDE
  class type inspect any-web
   inspect
  class type inspect any-ssh
-  pass
+  inspect
  class type inspect any-udp
-  pass
+  inspect
  class type inspect any-icmp
-  pass
+  inspect
  class type inspect any-acl-OUTSIDE-INSIDE
-  pass
+  inspect
  class type inspect any-ntp
-  pass
+  inspect
  class class-default
   drop log
 policy-map type inspect INSIDE-to-OUTSIDE
- class type inspect any-web
+ class type inspect any-icmp
+  inspect
+ class type inspect any-tcp
+  inspect
+ class type inspect any-udp
   inspect
  class class-default
   pass
 policy-map type inspect OUTSIDE-to-SELF
  class type inspect any-dhcp
-  pass
+  inspect
  class type inspect any-icmp
-  pass
- class type inspect any-ntp
-  pass
+  inspect
  class type inspect any-acl-OUTSIDE-SELF
-  pass
+  inspect
  class class-default
   drop log
 policy-map type inspect TUNNEL-to-DMZ
- class class-default
-  pass
-policy-map type inspect INSIDE-to-DMZ
+ class type inspect any-icmp
+  inspect
  class type inspect any-web
   inspect
+ class type inspect any-ssh
+  inspect
  class class-default
-  pass
+  drop log
+policy-map type inspect INSIDE-to-DMZ
+ class type inspect any-icmp
+  inspect
+ class type inspect any-web
+  inspect
+ class type inspect any-ssh
+  inspect
+ class class-default
+  drop log
 policy-map type inspect SELF-to-TUNNEL
+ class type inspect any-icmp
+  inspect
+ class type inspect any-tcp
+  inspect
+ class type inspect any-udp
+  inspect
  class class-default
   pass
 !
@@ -417,13 +489,9 @@ interface Tunnel200
  ip pim nbma-mode
  ip pim sparse-mode
  ip nhrp authentication M5FT123
- ip nhrp map 172.16.10.1 <?PIPD01?>
- ip nhrp map 172.16.10.2 <?PIPD02?>
- ip nhrp map multicast <?PIPD01?>
- ip nhrp map multicast <?PIPD02?>
+ ip nhrp nhs 172.16.0.1 nbma rb-we-aaa-prod-pipd01.westeurope.cloudapp.azure.com multicast priority 10 cluster 1
+ ip nhrp nhs 172.16.0.2 nbma rb-we-aaa-prod-pipd02.westeurope.cloudapp.azure.com multicast priority 20 cluster 1
  ip nhrp network-id 1
- ip nhrp nhs 172.16.10.1 priority 10 cluster 1
- ip nhrp nhs 172.16.10.2 priority 20 cluster 1
  ip nhrp nhs cluster 1 max-connections 4
  ip nhrp nhs fallback 25
  ip nhrp shortcut
